@@ -1,0 +1,482 @@
+<html lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gritlife</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $(window).scroll(function() {
+
+   if ($(document).scrollTop() > 50) {
+     $(".header").addClass("scrollclass_header");
+   } else {
+      $(".header").removeClass("scrollclass_header");
+     }
+   });
+  
+
+    $('.mobile-menu').click(function() {
+        
+        $('.mobile-navbar').slideToggle(); // Toggles the display of .mobile-navbar
+        $(this).find('i').css('color', '#000'); // Change the color of the <i> element
+    });
+});
+
+</script>
+
+<script>
+$(document).ready(function(){
+    $('.footer-toggle').click(function() {
+        // Toggle the next element, which is the footer content
+        $(this).next('.footer-content').slideToggle();
+        
+        // // Optionally, toggle a class on the header for an active state
+        // $(this).toggleClass('active');
+    });
+});
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').on('change', validatePhoneNumber);
+        $('#phoneNumber').on('input', validatePhoneNumber);
+
+        function validatePhoneNumber() {
+            const country = $('#countrySelect').val();
+            const phoneNumber = $('#phoneNumber').val();
+            const errorMsg = $('#errorMsg');
+
+            let isValid = false;
+
+            switch(country) {
+                case 'IN': // India
+                    isValid = /^[6-9]\d{9}$/.test(phoneNumber);
+                    break;
+                case 'US': // United States
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'GB': // United Kingdom
+                    isValid = /^7\d{9}$/.test(phoneNumber);
+                    break;
+                case 'CA': // Canada
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'AU': // Australia
+                    isValid = /^(04\d{8})$/.test(phoneNumber);
+                    break;
+                case 'NZ': // New Zealand
+                    isValid = /^(02[0-9]{7})$/.test(phoneNumber);
+                    break;
+                case 'DE': // Germany
+                    isValid = /^(\+49|0)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'FR': // France
+                    isValid = /^(\+33|0)[67]\d{8}$/.test(phoneNumber);
+                    break;
+                case 'IT': // Italy
+                    isValid = /^(3\d{9})$/.test(phoneNumber);
+                    break;
+                case 'BR': // Brazil
+                    isValid = /^(55)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'ZA': // South Africa
+                    isValid = /^(\+27|0)(\d{9})$/.test(phoneNumber);
+                    break;
+                case 'JP': // Japan
+                    isValid = /^(\+81|0)\d{10}$/.test(phoneNumber);
+                    break;
+                case 'CN': // China
+                    isValid = /^1[3-9]\d{9}$/.test(phoneNumber);
+                    break;
+                // Add more country validation patterns as needed
+                default:
+                    isValid = phoneNumber.length > 0; // Simple validation for other countries
+            }
+
+            if (isValid) {
+                errorMsg.text(''); // Clear error message
+            } else {
+                errorMsg.text('Invalid phone number for the selected country.'); // Show error message
+            }
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').change(function() {
+            $('#countryCode').val($(this).val());
+        });
+    });
+</script>
+
+<style>
+.banner-carees-page {
+    background-image: url(/gritlife/assests/desktop_background.jpeg) !important;
+    padding: 250px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.banner-carees-page h1 {
+    color: #fff !important;
+    font-size: 50px !important;
+}
+/*div#faqpage .header-items img.logoimg {*/
+/*    filter: brightness(0.8) invert(1);*/
+/*}*/
+
+/*div#faqpage .header-items ul li a {*/
+/*    color: #000 !important;*/
+/*}*/
+
+/*div#faqpage span.buttontop {*/
+/*    border-color: rgb(31, 34, 44) !important;*/
+/*    color: rgb(31, 34, 44) !important;*/
+/*}*/
+.header:hover ul.nav-items li a {
+    color: #000 !important;
+}
+div#faqpage span.contact a {
+    color: #fff !important;
+}
+
+div#faqpage .header-btns .contact {
+    background-color: #5993ea !important;
+    border-color: #5993ea !important;
+    color: #fff !important;
+}
+
+   section.faq-banner {
+    background-color: rgb(247, 244, 242);
+    padding: 165px 0px;
+    text-align: center;
+}
+.faq-banner-content h1 {
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 56px;
+}
+
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+      padding: 0px 64px;
+          padding-bottom: 20px;
+}
+button.accordion-inner {
+    padding: 27px 64px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+        border: none;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+    background-color: transparent;
+}
+.faq-section-second p {
+    font-size: 16px !important;
+    font-family: "Montserrat", sans-serif;
+    color: #1f222c !important;
+    line-height: 26px !important;
+}
+section.faq-section-second {
+    padding: 100px 0px;
+}
+.accordation-section {
+       border-bottom: 1px solid rgb(231, 234, 240);
+}
+.accordation-section-content {
+    border: 1px solid rgb(231, 234, 240);
+    border-radius: 8px;
+}
+.accordation-section-content .jTknBp::before, .jTknBp::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 15px;
+    height: 2px;
+    background-color: rgb(164, 170, 182);
+    border-radius: 120px;
+    transition: transform 500ms;
+}
+.accordation-section-content i.sc-1e63f9e7-2.jTknBp {
+    position: relative;
+}
+.accordation-section-content .jTknBp::after {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
+.accordation-section-content .active .jTknBp:after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.accordation-section-content i.sc-1e63f9e7-2.jTknBp {
+    min-height: 30px;
+    min-width: 30px;
+    padding: 7.5px;
+    background-color: rgb(222, 234, 251);
+    border-radius: 50%;
+}
+@media only screen and (max-width: 768px) {
+   .faq-banner-content h1 br {
+    display: none;
+} 
+.faq-banner-content h1 {
+       font-size: 29px !important;
+    line-height: 40px !important;
+}
+section.faq-banner {
+    padding: 134px 0px !important;
+}
+button.accordion-inner {
+    padding: 20px 15px !important;
+    font-size: 13px !important;
+    text-align: left !important;
+}
+section.faq-section-second {
+    padding: 49px 0px 0px !important;
+}
+.faq-banner svg.sc-59b48632-8.ivOfVc,.faq-banner svg.sc-59b48632-6.dUCBFu,.faq-banner svg.sc-59b48632-7.cVXlMQ,.faq-banner svg.sc-d59f4cb5-4.jMaNHf {
+    display: none;
+}
+}
+.faq-banner svg.sc-59b48632-6.dUCBFu {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 24px;
+    left: 9px;
+    stroke: rgb(222, 234, 251);
+}
+.faq-banner svg.sc-59b48632-7.cVXlMQ {
+    position: absolute;
+    width: 112px;
+    height: 112px;
+    right: 61px;
+    stroke: rgb(89, 147, 234);
+    stroke-width: 2px;
+    top: 144px;
+}
+.faq-banner svg.sc-59b48632-8.ivOfVc {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: -29px;
+    top: 65px;
+}
+section.faq-section-second {
+    position: relative;
+    background-color: #fff;
+}
+.faq-banner svg.sc-d59f4cb5-4.jMaNHf {
+    position: absolute;
+    right: 67%;
+    top: 118%;
+        height: 582px;
+}
+.faq-banner .wrapper {
+    position: relative;
+}
+@media screen and (min-width:768px) and (max-width:1024px) {
+    
+   .faq-banner svg.sc-59b48632-8.ivOfVc,.faq-banner svg.sc-59b48632-6.dUCBFu,.faq-banner svg.sc-59b48632-7.cVXlMQ,.faq-banner svg.sc-d59f4cb5-4.jMaNHf {
+    display: none !important
+    ;
+}
+
+}
+@media screen and (min-width:1025px) and (max-width:1400px) {
+    
+   .faq-banner svg.sc-d59f4cb5-4.jMaNHf {
+    right: 57% !important;
+    top: 123% !important;
+    height: 582px !important;
+}
+.faq-banner svg.sc-59b48632-6.dUCBFu {
+    left: 70px !important;
+}
+.faq-banner svg.sc-59b48632-7.cVXlMQ {
+    right: 126px !important;
+}
+.faq-banner svg.sc-59b48632-8.ivOfVc {
+    right: 55px !important;
+}
+}
+
+@media (max-width:767px){
+    .panel {
+    padding: 20px;
+}
+}
+</style>
+
+<div id="faqpage">
+
+ <header class="hero-section">
+        <div class="header">
+           <div class="wrapper">
+          <!-- Header Start -->
+          <div class="header-items">
+           <a href="https://server1.xploreseo.com/gritlife/">
+               <img src="/gritlife/assests/logo1-new.png" class="logoimg">
+           </a>
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="navbar">
+                <ul class="nav-items">
+                    <li class="link"><a href="/gritlife/"> Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html"> About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html"> Our Careers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html"> Experiences </a></li>
+                    <li class="link"><a href="/gritlife/terms-of-conditions.html"> Terms and Conditions </a></li>
+                    <li class="link"><a href="/gritlife/privacy-policy.html"> Privacy Policy </a></li>
+                    <!--<li class="link"><a href="#">Company &nbsp;<i class="bi bi-chevron-down"></i></a></li>-->
+                </ul>
+            </div>
+            <div class="header-btns">
+                <span class="contact"><a href="https://server1.xploreseo.com/gritlife/contact.html">Contact Us</a></span>
+                <span class="buttontop"><a href="https://server1.xploreseo.com/gritlife/build_your_day.html">Build your day</a></span>
+            </div>
+           </div>
+           <div class="mobile-navbar">
+                <ul class="list-item">
+                    <li class="link"><a href="/gritlife/">Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html">About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html">Our Carers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html">Experiences </a></li>
+                </ul>
+            </div>
+           <!-- Header End -->
+          </div>
+            </div>
+            </header>
+
+<div class="banner-carees-page">
+    <h1>FAQ</h1>
+</div>
+<section class="faq-banner">
+    <div class="wrapper">
+    <div class="faq-banner-content">
+        <h1>Have questions? We've got<br>
+answers.</h1>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="862" height="862" fill="none" viewBox="0 0 862 862" class="sc-d59f4cb5-4 jMaNHf"><circle cx="430.924" cy="430.924" r="430.232" fill="url(#paint0_linear_14927_151174)" transform="rotate(75 430.924 430.924)"></circle><defs><linearGradient id="paint0_linear_14927_151174" x1="430.924" x2="430.924" y1="0.692" y2="861.156" gradientUnits="userSpaceOnUse"><stop stop-color="#EFEAE6"></stop><stop offset="1" stop-color="#EFEAE6" stop-opacity="0.01"></stop></linearGradient></defs></svg>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="none" stroke="#DEEAFB" stroke-width="3" viewBox="0 0 53 53" class="sc-59b48632-6 dUCBFu"><circle cx="26.5" cy="26.5" r="25"></circle></svg>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" fill="none" stroke="#DEEAFB" stroke-width="3" viewBox="0 0 53 53" class="sc-59b48632-7 cVXlMQ"><circle cx="26.5" cy="26.5" r="25"></circle></svg>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="none" viewBox="0 0 35 35" class="sc-59b48632-8 ivOfVc"><circle cx="17.5" cy="17.5" r="17.5" fill="#DEEAFB"></circle></svg>
+       
+    </div>
+</section>
+        <section class="faq-section-second">
+            <div class="wrapper">
+                <div class="accordation-section-content">
+            <div class="accordation-section">
+                
+               <button class="accordion-inner">What is GritLife and what does it offer?<i aria-hidden="true" class="sc-1e63f9e7-2 jTknBp"></i></button>
+<div class="panel">
+  <p>
+We understand that payment for activities can often be confusing in typical care scenarios. To ensure full transparency and to simplify the process, we've categorised our activities into paid and free options, which are accessible with a Companion Card. This clear categorisation allows clients to easily understand which activities are covered and which might require payment, ensuring that no one is unexpectedly left out of pocket. Our goal is to make sure that all clients can participate in activities without financial surprises, allowing everyone to choose adventures that fit within their NDIS plan or personal budget</p>
+</div> 
+            </div>
+             <div class="accordation-section">
+                
+               <button class="accordion-inner">How do you choose the right activities for each client?<i aria-hidden="true" class="sc-1e63f9e7-2 jTknBp"></i></button>
+<div class="panel">
+  <p>
+We understand that payment for activities can often be confusing in typical care scenarios. To ensure full transparency and to simplify the process, we've categorised our activities into paid and free options, which are accessible with a Companion Card. This clear categorisation allows clients to easily understand which activities are covered and which might require payment, ensuring that no one is unexpectedly left out of pocket. Our goal is to make sure that all clients can participate in activities without financial surprises, allowing everyone to choose adventures that fit within their NDIS plan or personal budget</p>
+</div> 
+            </div>
+             <div class="accordation-section">
+                
+               <button class="accordion-inner">What safety measures does GritLife implement for its activities?<i aria-hidden="true" class="sc-1e63f9e7-2 jTknBp"></i></button>
+<div class="panel">
+  <p>
+We understand that payment for activities can often be confusing in typical care scenarios. To ensure full transparency and to simplify the process, we've categorised our activities into paid and free options, which are accessible with a Companion Card. This clear categorisation allows clients to easily understand which activities are covered and which might require payment, ensuring that no one is unexpectedly left out of pocket. Our goal is to make sure that all clients can participate in activities without financial surprises, allowing everyone to choose adventures that fit within their NDIS plan or personal budget</p>
+</div> 
+            </div>
+             <div class="accordation-section">
+                
+               <button class="accordion-inner">Who pays for the activities?<i aria-hidden="true" class="sc-1e63f9e7-2 jTknBp"></i></button>
+<div class="panel">
+  <p>
+We understand that payment for activities can often be confusing in typical care scenarios. To ensure full transparency and to simplify the process, we've categorised our activities into paid and free options, which are accessible with a Companion Card. This clear categorisation allows clients to easily understand which activities are covered and which might require payment, ensuring that no one is unexpectedly left out of pocket. Our goal is to make sure that all clients can participate in activities without financial surprises, allowing everyone to choose adventures that fit within their NDIS plan or personal budget</p>
+</div> 
+            </div>
+            </div>
+            </div>
+        </section>
+
+<script>
+var acc = document.getElementsByClassName("accordion-inner");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+ <div id="footer-placeholder"></div>
+
+    <script>
+        // Function to load HTML content from external files
+        const loadFile = (id, url) => {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error(`Error loading ${url}:`, error);
+                });
+        };
+
+        // Load header and footer files on DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", function() {
+            loadFile("header-placeholder", "https://server1.xploreseo.com/gritlife/header.html");
+            loadFile("footer-placeholder", "https://server1.xploreseo.com/gritlife/footer.html");
+        });
+    </script>
+
+</div>
+</html>

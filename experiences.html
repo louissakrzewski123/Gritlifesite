@@ -1,0 +1,2661 @@
+<html lang="en">
+ 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gritlife</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $(window).scroll(function() {
+
+   if ($(document).scrollTop() > 50) {
+     $(".header").addClass("scrollclass_header");
+   } else {
+      $(".header").removeClass("scrollclass_header");
+     }
+   });
+  
+
+    $('.mobile-menu').click(function() {
+        
+        $('.mobile-navbar').slideToggle(); // Toggles the display of .mobile-navbar
+        $(this).find('i').css('color', '#000'); // Change the color of the <i> element
+    });
+});
+
+</script>
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('.footer-toggle').click(function() {
+        // Toggle the next element, which is the footer content
+        $(this).next('.footer-content').slideToggle();
+        
+        // // Optionally, toggle a class on the header for an active state
+        // $(this).toggleClass('active');
+    });
+});
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').on('change', validatePhoneNumber);
+        $('#phoneNumber').on('input', validatePhoneNumber);
+
+        function validatePhoneNumber() {
+            const country = $('#countrySelect').val();
+            const phoneNumber = $('#phoneNumber').val();
+            const errorMsg = $('#errorMsg');
+
+            let isValid = false;
+
+            switch(country) {
+                case 'IN': // India
+                    isValid = /^[6-9]\d{9}$/.test(phoneNumber);
+                    break;
+                case 'US': // United States
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'GB': // United Kingdom
+                    isValid = /^7\d{9}$/.test(phoneNumber);
+                    break;
+                case 'CA': // Canada
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'AU': // Australia
+                    isValid = /^(04\d{8})$/.test(phoneNumber);
+                    break;
+                case 'NZ': // New Zealand
+                    isValid = /^(02[0-9]{7})$/.test(phoneNumber);
+                    break;
+                case 'DE': // Germany
+                    isValid = /^(\+49|0)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'FR': // France
+                    isValid = /^(\+33|0)[67]\d{8}$/.test(phoneNumber);
+                    break;
+                case 'IT': // Italy
+                    isValid = /^(3\d{9})$/.test(phoneNumber);
+                    break;
+                case 'BR': // Brazil
+                    isValid = /^(55)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'ZA': // South Africa
+                    isValid = /^(\+27|0)(\d{9})$/.test(phoneNumber);
+                    break;
+                case 'JP': // Japan
+                    isValid = /^(\+81|0)\d{10}$/.test(phoneNumber);
+                    break;
+                case 'CN': // China
+                    isValid = /^1[3-9]\d{9}$/.test(phoneNumber);
+                    break;
+                // Add more country validation patterns as needed
+                default:
+                    isValid = phoneNumber.length > 0; // Simple validation for other countries
+            }
+
+            if (isValid) {
+                errorMsg.text(''); // Clear error message
+            } else {
+                errorMsg.text('Invalid phone number for the selected country.'); // Show error message
+            }
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').change(function() {
+            $('#countryCode').val($(this).val());
+        });
+    });
+</script>
+
+
+<style>
+    .banner-carees-page {
+        background-image: url(/gritlife/assests/desktop_background.jpeg) !important;
+        padding: 250px 0px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+    
+    .banner-carees-page h1 {
+        color: #fff !important;
+        font-size: 50px !important;
+    }
+    section.manexprience-mainsecction {
+        background-color: rgb(247, 244, 242);
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+    
+    /*div#exprience-page ul.nav-items li a {*/
+    /*    color: #000 !important;*/
+    /*}*/
+    /*div#exprience-page .header-items img.logoimg {*/
+    /*    filter: brightness(0.8) invert(1);*/
+    /*}*/
+    
+    /*div#exprience-page span.buttontop {*/
+    /*    border-color: #fff !important;*/
+    /*    color: rgb(31, 34, 44) !important;*/
+    /*}*/
+    span.contact a {
+        color: #fff !important;
+    }
+    .four_slide_new_slider_3_exprienceslider-container {
+        overflow: hidden;
+    }
+    div#exprience-page .header-btns .contact {
+        background-color: #5993ea !important;
+        border-color: #5993ea !important;
+        color: #fff !important;
+    }
+    h1.man-headingexprience {
+        font-size: 40px;
+        color: #1f222c !important;
+    }
+    .new_slider_3_exprienceslider-container {
+        overflow: hidden;
+    }
+    p.man-exprienc-div {
+        font-size: 16px !important;
+        font-family: "Montserrat", sans-serif;
+        color: #1f222c !important;
+        line-height: 26px !important;
+        padding: 27px 0;
+        font-weight: 500;
+        margin-bottom: 16px;
+    }
+    h2.slider-heading-expri {
+        font-size: 45px;
+        line-height: 56px;
+        font-weight: 700;
+        padding-bottom: 32px;
+    }
+    .flipback-content h2 {
+        font-size: 20px;
+        padding-bottom: 13px !important;
+    }
+    a.buton-exprienc {
+        background-color: #5993ea !important;
+        border-color: #5993ea !important;
+        color: #fff !important;
+        text-decoration: none;
+        padding: 14px 39px !IMPORTANT;
+        border-radius: 50px !important;
+    }
+    .man-exprience-flex-newsec {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .manexprice-inner-cont {
+        width: 40%;
+    }
+    
+    .manexprience-image-about {
+        width: 60%;
+    }
+    
+    .manexprience-image-about img {
+        width: 100%;
+        border-radius: 16px !important;
+    }
+    
+    section.manconvert-exprience {
+        margin-top: 100px;
+    }
+    
+    .manexprice-inner-cont h3 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        color: #1f222c !important;
+        padding-bottom: 12px;
+    }
+    
+    .manexprice-inner-cont p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 32px;
+        padding-bottom: 12px;
+    }
+    /****slider1 css**/
+    .exprienceslider-container {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
+            .expience-innerslide {
+                min-width: 100%;
+                transition: 0.5s;
+            }
+    
+           .expience-innerslide img {
+        width: 100%;
+        /*height: 466px;*/
+        /*object-fit: cover;*/
+        border-radius: 10px;
+    }
+    .manexprience-sec {
+        padding: 52px 0;
+        padding-bottom: 8px !important;
+    }
+    
+       .exprience-slider1 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        margin-bottom: 66px !important;
+    }
+      
+    .exprinceslider-controls {
+        position: absolute;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: left;
+        top: 91%;
+        width: 13%;
+    }
+    
+        .exprienceprev, .expriencenext {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    
+     
+        .exprienceprev {
+        position: relative;
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        transform: rotate(180deg);
+         left: 10px;
+            position: absolute;
+    }
+    
+        .expriencenext {
+        position: absolute;
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        left: 78px;
+    }
+        
+        .manexprieninner-cont-box {
+        position: relative;
+    }
+    
+    .exprienceslider-content {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        top: 27px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+    p.mantop-exprince-cont {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        text-align: left;
+    }
+    .morni-exp-cont {
+        width: 100%;
+    }
+    h3.man-exprience-head {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 29px;
+        color: rgb(255, 255, 255);
+        padding-bottom: 23px;
+    }
+    
+    a.manlearnmore-exprien {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(62, 66, 76);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 255, 255);
+        height: 40px;
+        padding: 0px 16px;
+        border-radius: 100px;
+        font-size: 14px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    /*******slider 222 csss**********/
+    .exprience-slider2 {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        margin-bottom: 66px !important;
+    }
+    .expience-innerslide2 img {
+        width: 100%;
+        /*height: 466px;*/
+        /*object-fit: cover;*/
+        border-radius: 10px;
+    }
+    /***********about us exprience css***********/
+    .man-abotexprience-flex {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .content-man-box-ne21 {
+        width: 40%;
+    }
+    
+    .man-box-divnew3 {
+        width: 60%;
+    }
+    
+    .man-box-divnew3 img {
+        width: 100%;
+        border-radius: 10px !important;
+    }
+    
+    section.about-section-exprience {
+        margin-top: 100px;
+    }
+    
+    .content-man-box-ne21 h3 {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        padding-top: 17px;
+    }
+    
+    .content-man-box-ne21 p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 32px;
+        padding-top: 10px;
+    }
+    div#exprience-page .mobile-menu i {
+        color: #000 !important;
+    }
+    /****flip-box css here**/
+    .flip-box {
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #f1f1f1;
+      perspective: 1000px;
+    }
+    
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .flip-box-front, .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+    
+    /*.flip-box-front {*/
+    /*  background-color: #bbb;*/
+    /*  color: black;*/
+    /*}*/
+    
+    .flip-box-back {
+        background-color: #5993ea;
+        color: white;
+        transform: rotateY(180deg);
+        border-radius: 14px !important;
+        padding: 30px !important;
+    }
+    
+    
+    /*****=================slider three ===***********/
+    .new_slider_3_manexprieninner-cont-box {
+        position: relative;
+    }
+    
+    .new_slider_3_exprienceslider-content {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        top: 27px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    h3.new_slider_3_man-exprience-head {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 29px;
+        color: rgb(255, 255, 255);
+        padding-bottom: 23px;
+    }
+    
+    a.new_slider_3_manlearnmore-exprien {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(62, 66, 76);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 255, 255);
+        height: 40px;
+        padding: 0px 16px;
+        border-radius: 100px;
+        font-size: 14px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    
+    .new_slider_3_manexprieninner-cont-box img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    p.new_slider_3_mantop-exprince-cont {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        text-align: left;
+    }
+    
+    button#new_slider_3_prevBtn3-1 {
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        background-color: transparent;
+        transform: rotate(180deg);
+        left: 14px;
+        position: relative;
+    }
+    
+    button#new_slider_3_nextBtn3-1 {
+        position: relative;
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        background-color: transparent;
+        left: 32px;
+    }
+    
+    .new_slider_3_exprience-slider3-1 {
+        margin-bottom: 80px;
+    }
+    
+    .new_slider_3_exprinceslider-controls {
+        transform: translateY(-96%);
+        display: flex;
+        justify-content: left;
+    }
+    
+    h2.new_slider_3_slider-heading-expri {
+        font-size: 45px;
+        line-height: 56px;
+        font-weight: 700;
+        padding-bottom: 32px;
+        margin-top: 40px;
+    }
+    
+    /*************slider four******/
+    h2.four_slide_new_slider_3_slider-heading-expri {
+        font-size: 45px;
+        line-height: 56px;
+        font-weight: 700;
+        padding-bottom: 32px;
+    }
+    
+    .four_slide_new_slider_3_exprienceslider-content {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        right: 20px;
+        top: 27px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    
+    .four_slide_new_slider_3_manexprieninner-cont-box {
+        position: relative;
+    }
+    
+    h3.four_slide_new_slider_3_man-exprience-head {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 29px;
+        color: rgb(255, 255, 255);
+        padding-bottom: 23px;
+    }
+    
+    a.four_slide_new_slider_3_manlearnmore-exprien {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(62, 66, 76);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 255, 255);
+        height: 40px;
+        padding: 0px 16px;
+        border-radius: 100px;
+        font-size: 14px;
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        font-weight: 700;
+    }
+    
+    p.four_slide_new_slider_3_mantop-exprince-cont {
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        text-align: left;
+    }
+    
+    .four_slide_new_slider_3_manexprieninner-cont-box img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    
+    button#four_slide_new_slider_3_prevBtn3-1 {
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        background-color: transparent;
+        transform: rotate(180deg);
+        left: 14px;
+        position: relative;
+    }
+    
+    button#four_slide_new_slider_3_nextBtn3-1 {
+        position: relative;
+        cursor: pointer;
+        width: 56px;
+        height: 56px;
+        border-radius: 100%;
+        border: 1px solid rgb(31, 34, 44);
+        background-color: transparent;
+        left: 32px;
+        transform: rotate(182deg);
+    }
+    @media (max-width:768px){
+        .man-abotexprience-flex {
+        display: block !important;
+    }
+    
+    .manexprientopbanner {
+        padding-bottom: 28px;
+    }
+    .content-man-box-ne21 {
+        width: 100%;
+    }
+    
+    .man-box-divnew3 {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    h2.slider-heading-expri {
+        font-size: 30px !important;
+        line-height: 40px !important;
+    }
+    .exprience-slider2 {
+        margin-bottom: 106px !important;
+    }
+    .exprinceslider-controls {
+        top: 88% !important;
+    }
+    .exprience-slider1 {
+        margin-bottom: 110px !important;
+    }
+    h2.new_slider_3_slider-heading-expri {
+    font-size: 32px !Important;
+    line-height: 37px !important;
+}
+
+h2.four_slide_new_slider_3_slider-heading-expri {
+    font-size: 32px !important;
+    line-height: 35px !important;
+}
+section.manexprience-mainsecction {
+    padding-top: 50px !important;
+    padding-bottom: 20px !important;
+}
+h1.man-headingexprience {
+    font-size: 32px !important;
+    line-height: 36px !important;
+}
+    }
+    
+    @media (max-width:1100px) and (min-width:768px){
+        .exprinceslider-controls {
+        top: 88% !important;
+    }
+    }
+    
+    </style>
+    
+    <div id="exprience-page">
+   <header class="hero-section">
+        <div class="header">
+           <div class="wrapper">
+          <!-- Header Start -->
+          <div class="header-items">
+           <a href="https://server1.xploreseo.com/gritlife/">
+               <img src="/gritlife/assests/logo1-new.png" class="logoimg">
+           </a>
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="navbar">
+                <ul class="nav-items">
+                    <li class="link"><a href="/gritlife/"> Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html"> About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html"> Our Careers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html"> Experiences </a></li>
+                    <li class="link"><a href="/gritlife/terms-of-conditions.html"> Terms and Conditions </a></li>
+                    <li class="link"><a href="/gritlife/privacy-policy.html"> Privacy Policy </a></li>
+                    <!--<li class="link"><a href="#">Company &nbsp;<i class="bi bi-chevron-down"></i></a></li>-->
+                </ul>
+            </div>
+            <div class="header-btns">
+                <span class="contact"><a href="https://server1.xploreseo.com/gritlife/contact.html">Contact Us</a></span>
+                <span class="buttontop"><a href="https://server1.xploreseo.com/gritlife/build_your_day.html">Build your day</a></span>
+            </div>
+           </div>
+           <div class="mobile-navbar">
+                <ul class="list-item">
+                    <li class="link"><a href="/gritlife/">Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html">About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html">Our Carers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html">Experiences </a></li>
+                </ul>
+            </div>
+           <!-- Header End -->
+          </div>
+            </div>
+            </header>
+    
+    <div class="banner-carees-page" bis_skin_checked="1">
+        <h1>Experiences</h1>
+    </div>
+    
+    
+        <section class="manexprience-mainsecction">
+            <div class="wrapper">
+                <div class="manexprientopbanner">
+                    <h1 class="man-headingexprience">Build Your Day, Craft Your Adventure!</h1>
+                    <p class="man-exprienc-div">Epic Adventures Tailored to You - Push Boundaries, Ignite Your Spirit, and <br>Choose Your Next Thrill.</p>
+                    <a href="https://server1.xploreseo.com/gritlife/build_your_day.html" class="buton-exprienc">Build Your Day</a>
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="about-section-exprience">
+              <div class="wrapper">
+                 <div class="man-abotexprience-flex">
+                     <div class="content-man-box-ne21">
+                         <h3>Covered by Companion Card</h3>
+                         <p>Got a Companion Card? Sweet! That means your support worker can join you in these
+    activities for free-if you want them to come along for the ride.</p>
+                         <h3>Free Activities</h3>
+                         <p>No need to reach for your wallet here. These activities are totally free for both you and your support worker-just focus on having a blast</p>
+                         <h3>A Little Something Extra</h3>
+                         <p>These experiences are the perfect add-ons to round out an epic day. Whether you're winding down or reflecting on the action, they're best paired with a main adventure for a fulfilling experience.</p>
+                         <h3>Gritlife Blueprint Days</h3>
+                         <p>Designed by our expert team, these premade days mix and match activities to help you make the most of your time with us. They combine all the best of what GritLife has to offer for a well-rounded,
+    action-packed day</p>
+                     </div>
+                     <div class="man-box-divnew3">
+                         <img alt="" src="/gritlife/assests/sword_app_interface_with_portrait_of_sword_therapist_c420f512d2.png">
+                     </div>
+    
+                 </div> 
+                  
+              </div>
+    
+        </section>
+        
+        
+        
+        
+    <section class="manexprience-sec">
+        <div class="wrapper">
+            <div class="exprienceslider-container">
+                <h2 class="slider-heading-expri">Covered by Companion card</h2>
+                <div class="exprience-slider1">
+                    
+                    <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                    <img src="/gritlife/assests/newsliderimg1.png" alt="Slide 1">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">INDOOR ROCKCLIMBING</p>
+                                        <div class="morni-exp-cont">
+                                        <h3 class="man-exprience-head">Morningside, Enoggera, West End +</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>INDOOR ROCKCLIMBING</h2>
+                                      <p>Indoor rock climbing has become one of the most popular
+                                      adventure sports for thrill-seekers and fitness enthusiasts alike.
+                                      Unlike outdoor climbing, indoor rock climbing takes place in a controlled 
+                                      environment, typically within a gym, offering a range of difficulties that 
+                                      cater to both beginners and seasoned climbers. Whether you’re looking to build
+                                      strength, improve coordination, or simply challenge yourself, indoor rock climbing provides the perfect outlet.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!----silde 2--->
+                       <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider555.png" alt="Slide 2">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">TRAMPOLINING</p>
+                                        <div class="morni-exp-cont">
+                                        <h3 class="man-exprience-head">Tingalpa, Macgregor, Morayfield</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>TRAMPOLINING</h2>
+                                      <p>Trampolining is a dynamic and exhilarating sport that combines fun,
+                                      fitness, and a sense of weightless freedom. Originally developed as a 
+                                      training tool for astronauts and athletes, trampolining has grown into
+                                      a popular recreational activity and competitive sport enjoyed by people of 
+                                      all ages. With its unique combination of acrobatics, strength, and balance, trampolining offers an engaging way to stay active and entertained.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!--      <div class="expience-innerslide">-->
+                    <!--    <div class="manexprieninner-cont-box">-->
+                    <!--        <img src="/gritlife/assests/slider555.png" alt="Slide 1">-->
+                    <!--        <div class="exprienceslider-content">-->
+                    <!--            <p class="mantop-exprince-cont">TRAMPOLINING</p>-->
+                    <!--            <div class="morni-exp-cont">-->
+                    <!--            <h3 class="man-exprience-head">Tingalpa, Macgregor, Morayfield</h3>-->
+                    <!--            <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    
+                    <!------slide 3--->
+                    
+                      <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/sliderimg222.png" alt="Slide 1">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">LONE PINE KOALA SANCTUARY</p>
+                                        <div class="morni-exp-cont">
+                                       <h3 class="man-exprience-head">Fig Tree Pocket</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>LONE PINE KOALA SANCTUARY</h2>
+                                      <p>Lone Pine Koala Sanctuary, located in Brisbane, Australia, is the world’s oldest
+                                      and largest koala sanctuary, providing a unique and intimate opportunity to connect
+                                      with some of Australia’s most beloved wildlife. Established in 1927, Lone Pine is not 
+                                      only a sanctuary for koalas but also home to a wide variety of native species, including
+                                      kangaroos, wombats, dingoes, and birds, making it a must-visit destination for animal lovers and nature enthusiasts alike.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <!--   <div class="expience-innerslide">-->
+                    <!--    <div class="manexprieninner-cont-box">-->
+                    <!--        <img src="/gritlife/assests/sliderimg222.png" alt="Slide 1">-->
+                    <!--        <div class="exprienceslider-content">-->
+                    <!--            <p class="mantop-exprince-cont">LONE PINE KOALA SANCTUARY</p>-->
+                    <!--            <div class="morni-exp-cont">-->
+                    <!--            <h3 class="man-exprience-head">Fig Tree Pocket</h3>-->
+                    <!--            <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    
+                    
+                     <!------slide 3--->
+                    
+                      <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                        <img src="/gritlife/assests/slider4444.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                            <p class="mantop-exprince-cont">QAGOMA</p>
+                                            <div class="morni-exp-cont">
+                                            <h3 class="man-exprience-head">South Bank</h3>
+                                            <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>QAGOMA</h2>
+                                      <p>Designed by our expert team, these premade days mix 
+                                      and match activities to help you make the most of 
+                                      your time with us. They combine all the best of what 
+                                      GritLife has to offer for a well-rounded, action-packed day Designed by our expert team, these premade days mix 
+                                      and match activities to help you make the most of 
+                                      your time with us. They combine all the best of what 
+                                      GritLife has to offer for a well-rounded, action-packed day</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <!--   <div class="expience-innerslide">-->
+                    <!--    <div class="manexprieninner-cont-box">-->
+                    <!--        <img src="/gritlife/assests/slider4444.png" alt="Slide 1">-->
+                    <!--        <div class="exprienceslider-content">-->
+                    <!--            <p class="mantop-exprince-cont">QAGOMA</p>-->
+                    <!--            <div class="morni-exp-cont">-->
+                    <!--            <h3 class="man-exprience-head">South Bank</h3>-->
+                    <!--            <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                    <!--            </div>-->
+                    <!--        </div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    
+                    
+                    
+                    
+                    
+                    <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                    <img src="/gritlife/assests/newsliderimg1.png" alt="Slide 1">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">INDOOR ROCKCLIMBING</p>
+                                        <div class="morni-exp-cont">
+                                        <h3 class="man-exprience-head">Morningside, Enoggera, West End +</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>INDOOR ROCKCLIMBING</h2>
+                                      <p>Indoor rock climbing has become one of the most popular
+                                      adventure sports for thrill-seekers and fitness enthusiasts alike.
+                                      Unlike outdoor climbing, indoor rock climbing takes place in a controlled 
+                                      environment, typically within a gym, offering a range of difficulties that 
+                                      cater to both beginners and seasoned climbers. Whether you’re looking to build
+                                      strength, improve coordination, or simply challenge yourself, indoor rock climbing provides the perfect outlet.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                         <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider555.png" alt="Slide 2">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">TRAMPOLINING</p>
+                                        <div class="morni-exp-cont">
+                                        <h3 class="man-exprience-head">Tingalpa, Macgregor, Morayfield</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>TRAMPOLINING</h2>
+                                      <p>Trampolining is a dynamic and exhilarating sport that combines fun,
+                                      fitness, and a sense of weightless freedom. Originally developed as a 
+                                      training tool for astronauts and athletes, trampolining has grown into
+                                      a popular recreational activity and competitive sport enjoyed by people of 
+                                      all ages. With its unique combination of acrobatics, strength, and balance, trampolining offers an engaging way to stay active and entertained.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                     <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/sliderimg222.png" alt="Slide 1">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">LONE PINE KOALA SANCTUARY</p>
+                                        <div class="morni-exp-cont">
+                                       <h3 class="man-exprience-head">Fig Tree Pocket</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>LONE PINE KOALA SANCTUARY</h2>
+                                      <p>Lone Pine Koala Sanctuary, located in Brisbane, Australia, is the world’s oldest
+                                      and largest koala sanctuary, providing a unique and intimate opportunity to connect
+                                      with some of Australia’s most beloved wildlife. Established in 1927, Lone Pine is not 
+                                      only a sanctuary for koalas but also home to a wide variety of native species, including 
+                                      kangaroos, wombats, dingoes, and birds, making it a must-visit destination for animal lovers and nature enthusiasts alike.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                     <div class="expience-innerslide">
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider4444.png" alt="Slide 1">
+                                    <div class="exprienceslider-content">
+                                        <p class="mantop-exprince-cont">QAGOMA</p>
+                                        <div class="morni-exp-cont">
+                                       <h3 class="man-exprience-head">South Bank</h3>
+                                        <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>LONE PINE KOALA SANCTUARY</h2>
+                                      <p>Lone Pine Koala Sanctuary, located in Brisbane, Australia, is the world’s oldest
+                                      and largest koala sanctuary, providing a unique and intimate opportunity to connect
+                                      with some of Australia’s most beloved wildlife. Established in 1927, Lone Pine is not 
+                                      only a sanctuary for koalas but also home to a wide variety of native species, including 
+                                      kangaroos, wombats, dingoes, and birds, making it a must-visit destination for animal lovers and nature enthusiasts alike.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                       <div class="expience-innerslide">
+                        <div class="manexprieninner-cont-box">
+                            <img src="/gritlife/assests/slider4444.png" alt="Slide 1">
+                            <div class="exprienceslider-content">
+                                <p class="mantop-exprince-cont">QAGOMA</p>
+                                <div class="morni-exp-cont">
+                                <h3 class="man-exprience-head">South Bank</h3>
+                                <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                
+                </div>
+    
+                <div class="exprinceslider-controls">
+                    <button class="exprienceprev" id="prevBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                    <button class="expriencenext" id="nextBtn"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
+    <script>
+    //slider exprience1 script start here
+        let currentIndex = 0;
+        let slidesToShow = 4; // Default for desktop
+        const slides = document.querySelectorAll('.expience-innerslide');
+        const totalSlides = slides.length;
+    
+        const slider = document.querySelector('.exprience-slider1');
+        const prevButton = document.getElementById('prevBtn');
+        const nextButton = document.getElementById('nextBtn');
+    
+        function setSlidesToShow() {
+            const windowWidth = window.innerWidth;
+    
+            if (windowWidth <= 480) {
+                slidesToShow = 1; // Mobile view
+            } else if (windowWidth <= 768) {
+                slidesToShow = 3; // Tablet view
+            } else {
+                slidesToShow = 4; // Desktop view
+            }
+    
+            // Set the width of each slide dynamically based on slidesToShow
+            slides.forEach((slide) => {
+                slide.style.minWidth = `${100 / slidesToShow}%`;
+            });
+        }
+    
+        function showSlide(index) {
+            if (index >= totalSlides - slidesToShow + 1) {
+                currentIndex = totalSlides - slidesToShow;
+            } else if (index < 0) {
+                currentIndex = 0;
+            } else {
+                currentIndex = index;
+            }
+    
+            const offset = -(currentIndex * (100 / slidesToShow));
+            slider.style.transform = `translateX(${offset}%)`;
+        }
+    
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
+    
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+    
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlide);
+    
+        // Auto play
+        setInterval(() => {
+            nextSlide();
+        }, 3000); // Change slides every 3 seconds
+    
+        // Set initial slide width based on screen size
+        setSlidesToShow();
+    
+        // Handle window resize to reset slide width and position
+        window.addEventListener('resize', () => {
+            setSlidesToShow(); // Adjust slide widths on window resize
+            showSlide(currentIndex); // Maintain current slide position
+        });
+        
+    //slider exprience1 script end here
+        
+    </script>
+    
+    
+    <section class="manexprience-sec">
+        <div class="wrapper">
+            <div class="exprienceslider-container">
+                <h2 class="slider-heading-expri">Free activities</h2>
+                <div class="exprience-slider2">
+                    
+                    <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                      
+                        
+                        
+                        
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                       <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                             <p class="mantop-exprince-cont">NATIONAL PARK WALKS</p>
+                                            <div class="morni-exp-cont">
+                                            <h3 class="man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>
+                                            <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>National Park Walks</h2>
+                                      <p>Walking through national parks offers a unique and immersive way to connect with nature, 
+                                      providing fresh air, scenic landscapes, and the chance to discover the rich biodiversity that
+                                      these protected areas have to offer. From short, leisurely strolls to challenging hikes, national
+                                      park walks cater to all ages and abilities, making them ideal for anyone looking to escape into the great
+                                      outdoors. With well-maintained trails, stunning views, and the opportunity to observe wildlife, national park
+                                      walks are a perfect way to experience nature’s beauty firsthand.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                          <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">South Bank</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                             
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                             <p class="mantop-exprince-cont">SOUTH BANK BEACH</p>
+                                                <div class="morni-exp-cont">
+                                                <h3 class="man-exprience-head">South Bank</h3>
+                                            <h3 class="man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>SOUTH BANK BEACH</h2>
+                                      <p>South Bank Beach, located in the heart of Brisbane, Australia, is a 
+                                      unique man-made beach that offers a perfect blend of relaxation, entertainment,
+                                      and natural beauty in an urban setting. Known as Streets Beach, this inner-city
+                                      lagoon provides locals and tourists alike with a chance to enjoy a refreshing swim, 
+                                      sunbathe on sandy shores, or simply soak in the vibrant atmosphere, all without leaving the city. 
+                                      Whether you're looking for a family-friendly day out, a romantic escape, or a break from sightseeing, 
+                                      South Bank Beach offers something for everyone.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                       <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">Gold Coast</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                     <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                               <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                            <p class="mantop-exprince-cont">GOLD COAST BEACH TRIP</p>
+                                            <div class="morni-exp-cont">
+                                          <h3 class="man-exprience-head">Gold Coast</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>GOLD COAST BEACH TRIP</h2>
+                                      <p>A trip to the Gold Coast is a quintessential Australian experience, offering sun-kissed beaches,
+                                      thrilling waves, and a vibrant beach culture that draws visitors from all over the world. Located just
+                                      an hour south of Brisbane, the Gold Coast boasts some of the best beaches in the country, making it an 
+                                      ideal destination for those seeking relaxation, adventure, or both. With over 57 kilometers of pristine
+                                      coastline, a Gold Coast beach trip promises stunning views, endless outdoor activities, and unforgettable memories.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>    
+                        
+                        
+                        
+                        
+                    </div>
+                       <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">MOVE</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">Build strength to avoid re-injury</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                               <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                           <p class="mantop-exprince-cont">MOVE</p>
+                                            <div class="morni-exp-cont">
+                                         <h3 class="man-exprience-head">Build strength to avoid re-injury</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>MOVE</h2>
+                                      <p>Movement is an essential part of life, whether it's the physical act of walking, running, stretching,
+                                      or the mental and emotional shifts we experience in response to change. The concept of "move" encompasses
+                                      more than just physical activity; it’s about progress, growth, and the energy that fuels both our bodies 
+                                      and minds. From small, everyday actions to significant life decisions, movement is the driving force behind
+                                      personal and societal transformation</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>  
+                        
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                 <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                          <p class="mantop-exprince-cont">NATIONAL PARK WALKS</p>
+                                            <div class="morni-exp-cont">
+                                        <h3 class="man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>NATIONAL PARK WALKS</h2>
+                                      <p>Walking through national parks offers a unique and immersive way to connect with 
+                                      nature, providing fresh air, scenic landscapes, and the chance to discover the rich 
+                                      biodiversity that these protected areas have to offer. From short, leisurely strolls
+                                      to challenging hikes, national park walks cater to all ages and abilities, making them 
+                                      ideal for anyone looking to escape into the great outdoors. With well-maintained trails,
+                                      stunning views, and the opportunity to observe wildlife, national park walks are a perfect way to experience nature’s beauty firsthand.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                        
+                    </div>
+                          <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">South Bank</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                     <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                 <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                           <p class="mantop-exprince-cont">SOUTH BANK BEACH</p>
+                                            <div class="morni-exp-cont">
+                                      <h3 class="man-exprience-head">South Bank</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>SOUTH BANK BEACH</h2>
+                                      <p>South Bank Beach, located in the heart of Brisbane, Australia, is a unique man-made
+                                      beach that offers a perfect blend of relaxation, entertainment, and natural beauty in an
+                                      urban setting. Known as Streets Beach, this inner-city lagoon provides locals and tourists alike
+                                      with a chance to enjoy a refreshing swim, sunbathe on sandy shores, or simply soak in the vibrant 
+                                      atmosphere, all without leaving the city. Whether you're looking for a family-friendly day out, a
+                                      romantic escape, or a break from sightseeing, South Bank Beach offers something for everyone.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                        
+                    </div>
+                       <div class="expience-innerslide2">
+                        <!--<div class="manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="exprienceslider-content">-->
+                        <!--        <p class="mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="morni-exp-cont">-->
+                        <!--        <h3 class="man-exprience-head">Gold Coast</h3>-->
+                        <!--        <a href="#" class="manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                      <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                 <div class="manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                                        <div class="exprienceslider-content">
+                                          <p class="mantop-exprince-cont">GOLD COAST BEACH TRIP</p>
+                                            <div class="morni-exp-cont">
+                                     <h3 class="man-exprience-head">Gold Coast</h3>
+                                           <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>GOLD COAST BEACH TRIP</h2>
+                                      <p>A trip to the Gold Coast is a quintessential Australian experience,
+                                      offering sun-kissed beaches, thrilling waves, and a vibrant beach culture
+                                      that draws visitors from all over the world. Located just an hour south of Brisbane,
+                                      the Gold Coast boasts some of the best beaches in the country, making it an ideal destination
+                                      for those seeking relaxation, adventure, or both. With over 57 kilometers of pristine coastline,
+                                      a Gold Coast beach trip promises stunning views, endless outdoor activities, and unforgettable memories.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                    </div>
+                       <div class="expience-innerslide2">
+                        <div class="manexprieninner-cont-box">
+                            <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                            <div class="exprienceslider-content">
+                                <p class="mantop-exprince-cont">MOVE</p>
+                                <div class="morni-exp-cont">
+                                <h3 class="man-exprience-head">Build strength to avoid re-injury</h3>
+                                <a href="#" class="manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="exprinceslider-controls">
+                    <button class="exprienceprev" id="prevBtn2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                    <button class="expriencenext" id="nextBtn2"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        window.onload = function () {
+            //slider experience2 script start here
+            let currentIndex = 0;
+            let slidesToShow = 4; // Default for desktop
+            const slides = document.querySelectorAll('.expience-innerslide2');
+            const totalSlides = slides.length;
+    
+            const slider = document.querySelector('.exprience-slider2');
+            const prevButton = document.getElementById('prevBtn2');
+            const nextButton = document.getElementById('nextBtn2');
+    
+            // Ensure the slider and buttons exist
+            if (!slider || !prevButton || !nextButton || totalSlides === 0) {
+                console.error('Slider elements or buttons not found.');
+                return;
+            }
+    
+            function setSlidesToShow() {
+                const windowWidth = window.innerWidth;
+    
+                if (windowWidth <= 480) {
+                    slidesToShow = 1; // Mobile view
+                } else if (windowWidth <= 768) {
+                    slidesToShow = 3; // Tablet view
+                } else {
+                    slidesToShow = 4; // Desktop view
+                }
+    
+                // Set the width of each slide dynamically based on slidesToShow
+                slides.forEach((slide) => {
+                    slide.style.minWidth = `${100 / slidesToShow}%`;
+                });
+            }
+    
+            function showSlide(index) {
+                if (index >= totalSlides - slidesToShow) {
+                    currentIndex = totalSlides - slidesToShow;
+                } else if (index < 0) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+    
+                const offset = -(currentIndex * (100 / slidesToShow));
+                slider.style.transform = `translateX(${offset}%)`;
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+    
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+    
+            // Auto play
+            let autoPlayInterval = setInterval(() => {
+                nextSlide();
+            }, 3000); // Change slides every 3 seconds
+    
+            // Stop autoplay on hover
+            slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            slider.addEventListener('mouseleave', () => {
+                autoPlayInterval = setInterval(() => {
+                    nextSlide();
+                }, 3000);
+            });
+    
+            // Set initial slide width based on screen size
+            setSlidesToShow();
+    
+            // Handle window resize to reset slide width and position
+            window.addEventListener('resize', () => {
+                setSlidesToShow(); // Adjust slide widths on window resize
+                showSlide(currentIndex); // Maintain current slide position
+            });
+        };
+        //slider experience2 script end here
+    </script>
+    
+    
+    <section class="new_slider_3_manexprience-sec new1">
+        <div class="wrapper">
+            <div class="new_slider_3_exprienceslider-container">
+                <h2 class="new_slider_3_slider-heading-expri">A little something extra</h2>
+                <div class="new_slider_3_exprience-slider3-1">
+                    
+                    <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                       <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                 <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                          <p class="new_slider_3_mantop-exprince-cont">COFFEE AND CAKES</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                           <h3 class="new_slider_3_man-exprience-head">You decide!</h3>
+                                           <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>COFFEE AND CAKES</h2>
+                                      <p>Coffee and cakes—two simple pleasures that come together to create a timeless combination.
+                                      Whether you're enjoying a morning pick-me-up, an afternoon treat, or a cozy moment with friends,
+                                      the pairing of a rich, aromatic coffee with a sweet, decadent slice of cake is a tradition enjoyed
+                                      across cultures and continents. From the comforting warmth of freshly brewed coffee to the indulgent
+                                      flavors of cakes, this duo offers a perfect blend of comfort, flavor, and connection.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                            
+                        
+                        
+                    </div>
+                          <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">South Bank</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                 <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                            <p class="new_slider_3_mantop-exprince-cont">SHOOT SOME HOOPS</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                           <h3 class="new_slider_3_man-exprience-head">New Farm, Kangaroo Point, Saint Lucia +</h3>
+                                           <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>SHOOT SOME HOOPS</h2>
+                                      <p>Shooting some hoops is a universal pastime that brings people together,
+                                      whether for a casual pick-up game, a solo practice session, or an intense 
+                                      one-on-one challenge. Basketball’s simplicity and accessibility make it one 
+                                      of the most popular sports globally, requiring little more than a ball and a
+                                      hoop to get started. Whether you’re playing at a local park, a school gym, or a
+                                      neighborhood driveway, shooting hoops is a great way to stay active, sharpen skills, and enjoy the fun of friendly competition.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>      
+                        
+                    </div>
+                       <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">Gold Coast</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                              <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                            <p class="new_slider_3_mantop-exprince-cont">REFLECTIVE STROLL</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                            <h3 class="new_slider_3_man-exprience-head">You decide!</h3>
+                                           <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>REFLECTIVE STROLL</h2>
+                                      <p>A reflective stroll is more than just a leisurely walk; it’s an opportunity 
+                                      to connect with your surroundings, quiet your mind, and engage in self-reflection.
+                                      In our fast-paced world, taking the time to step outside and walk can be a transformative
+                                      experience, allowing us to recharge and gain perspective on our thoughts and feelings. Whether
+                                      it’s a walk through a local park, along a scenic trail, or around your neighborhood, a reflective
+                                      stroll invites a moment of mindfulness amidst the chaos of daily life.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                    </div>
+                       <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">MOVE</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">Build strength to avoid re-injury</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                  <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                          <p class="new_slider_3_mantop-exprince-cont">HOME GAMING HANGOUT</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                            <h3 class="new_slider_3_man-exprience-head">Your Place</h3>
+                                           <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>HOME GAMING HANGOUT</h2>
+                                      <p>The beauty of a home gaming hangout lies in its ability to strengthen relationships
+                                      through shared experiences. The combination of teamwork, competition, and camaraderie 
+                                      fosters bonds that can extend beyond the virtual world. It’s a chance to connect with 
+                                      friends and family, escape the stresses of everyday life, and create a sense of community through gaming.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                    </div>
+                    
+                    <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                          <p class="new_slider_3_mantop-exprince-cont">COFFEE AND CAKES</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                           <h3 class="new_slider_3_man-exprience-head">You decide!</h3>
+                                           <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>COFFEE AND CAKES</h2>
+                                      <p>Coffee and cakes—two simple pleasures that come together to create a timeless combination.
+                                      Whether you're enjoying a morning pick-me-up, an afternoon treat, or a cozy moment with friends,
+                                      the pairing of a rich, aromatic coffee with a sweet, decadent slice of cake is a tradition enjoyed 
+                                      across cultures and continents. From the comforting warmth of freshly brewed coffee to the indulgent
+                                      flavors of cakes, this duo offers a perfect blend of comfort, flavor, and connection.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                    </div>
+                          <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">South Bank</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                      <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                          <p class="new_slider_3_mantop-exprince-cont">SHOOT SOME HOOPS</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                             <h3 class="new_slider_3_man-exprience-head">New Farm, Kangaroo Point, Saint Lucia +</h3>
+                                             <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>SHOOT SOME HOOPS</h2>
+                                      <p>Shooting some hoops is a universal pastime that brings people together, whether for a casual pick-up game,
+                                      a solo practice session, or an intense one-on-one challenge. Basketball’s simplicity and accessibility make it
+                                      one of the most popular sports globally, requiring little more than a ball and a hoop to get started. Whether 
+                                      you’re playing at a local park, a school gym, or a neighborhood driveway, shooting hoops is a great way to stay
+                                      active, sharpen skills, and enjoy the fun of friendly competition.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                        
+                        
+                    </div>
+                       <div class="new_slider_3_expience-innerslide3-1">
+                        <!--<div class="new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="new_slider_3_mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="new_slider_3_morni-exp-cont">-->
+                        <!--        <h3 class="new_slider_3_man-exprience-head">Gold Coast</h3>-->
+                        <!--        <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="new_slider_3_manexprieninner-cont-box">
+                                 <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                                        <div class="new_slider_3_exprienceslider-content">
+                                      <p class="new_slider_3_mantop-exprince-cont">REFLECTIVE STROLL</p>
+                                           <div class="new_slider_3_morni-exp-cont">
+                                             <h3 class="new_slider_3_man-exprience-head">You decide!</h3>
+                                             <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                             </div>
+                                        </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>REFLECTIVE STROLL</h2>
+                                      <p>A reflective stroll is more than just a leisurely walk; it’s an opportunity to connect with
+                                      your surroundings, quiet your mind, and engage in self-reflection. In our fast-paced world, taking
+                                      the time to step outside and walk can be a transformative experience, allowing us to recharge and gain
+                                      perspective on our thoughts and feelings. Whether it’s a walk through a local park, along a scenic trail,
+                                      or around your neighborhood, a reflective stroll invites a moment of mindfulness amidst the chaos of daily life.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>     
+                     </div>
+                       <div class="new_slider_3_expience-innerslide3-1">
+                        <div class="new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                            <div class="new_slider_3_exprienceslider-content">
+                                <p class="new_slider_3_mantop-exprince-cont">HOME GAMING HANGOUT</p>
+                                <div class="new_slider_3_morni-exp-cont">
+                                <h3 class="new_slider_3_man-exprience-head">Your place</h3>
+                                <a href="#" class="new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="new_slider_3_exprinceslider-controls">
+                    <button class="new_slider_3_exprienceprev" id="new_slider_3_prevBtn3-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                    <button class="new_slider_3_expriencenext" id="new_slider_3_nextBtn3-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    
+    
+    .new_slider_3_exprience-slider3-1 {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .new_slider_3_expience-innerslide3-1 {
+        min-width: 25%;
+        box-sizing: border-box;
+    }
+    
+    @media (max-width: 1024px) {
+        .new_slider_3_expience-innerslide3-1 {
+            min-width: 33.33%; 
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .new_slider_3_expience-innerslide3-1 {
+            min-width: 100%; 
+        }
+    }
+    
+    </style>
+    
+    <script>
+    
+    document.addEventListener('DOMContentLoaded', function () {
+        const sliderContainer = document.querySelector('.new_slider_3_exprience-slider3-1');
+        const slides = document.querySelectorAll('.new_slider_3_expience-innerslide3-1');
+        const nextBtn = document.getElementById('new_slider_3_nextBtn3-1');
+        const prevBtn = document.getElementById('new_slider_3_prevBtn3-1');
+    
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        const slidesToShow = 4; // Default slides shown
+    
+        function updateSliderPosition() {
+            const offset = -(currentSlide * (100 / slidesToShow)); // Calculate offset based on current slide
+            sliderContainer.style.transform = `translateX(${offset}%)`;
+        }
+    
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < totalSlides - slidesToShow) {
+                currentSlide++;
+                updateSliderPosition();
+            }
+        });
+    
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSliderPosition();
+            }
+        });
+    
+        // Handle resizing for responsive design
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 768) {
+                slidesToShow = 1; // Mobile
+            } else if (window.innerWidth <= 1024) {
+                slidesToShow = 3; // Tablet
+            } else {
+                slidesToShow = 4; // Desktop
+            }
+            updateSliderPosition(); // Update position on resize
+        });
+    
+        updateSliderPosition(); // Initial call to set position
+    });
+    
+    </script>
+    <!--=======================================================================-->
+    
+    <section class="four_slide_new_slider_3_manexprience-sec four_slide_new1">
+        <div class="wrapper">
+            <div class="four_slide_new_slider_3_exprienceslider-container">
+                <h2 class="four_slide_new_slider_3_slider-heading-expri">Gritlife Blueprint Days</h2>
+                <div class="four_slide_new_slider_3_exprience-slider3-1">
+                    
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">ADVENTURE AND RELAXATION</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                    <h3 class="four_slide_new_slider_3_man-exprience-head">west End</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>ADVENTURE AND RELAXATION</h2>
+                                      <p>In our fast-paced world, the pursuit of adventure and relaxation may seem at odds,
+                                      yet they form a harmonious balance that can enrich our lives. Embracing both the thrill
+                                      of exploration and the serenity of calm can lead to a fulfilling lifestyle that nurtures
+                                      both our physical and mental well-being. Whether through exhilarating outdoor activities or
+                                      tranquil moments of reflection, adventure and relaxation can complement each other, creating a holistic approach to happiness.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>   
+                        
+                    </div>
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">South Bank</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                               
+                          <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                           <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">URBAN ADVENTURE</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                 <h3 class="four_slide_new_slider_3_man-exprience-head">Toowong - West End - Toowong</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>URBAN ADVENTURE</h2>
+                                      <p>Urban adventure offers a unique way to experience the vibrant life of a city,
+                                      combining exploration, culture, and excitement in one exhilarating package. Unlike
+                                      traditional outdoor adventures, urban exploration encourages participants to engage with 
+                                      their surroundings in creative and often unexpected ways. From navigating bustling streets 
+                                      and uncovering hidden gems to indulging in local cuisines and experiencing the rich cultural 
+                                      tapestry, an urban adventure invites everyone to discover the heartbeat of the city.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                    </div>
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Gold Coast</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                              <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                             <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                              <p class="four_slide_new_slider_3_mantop-exprince-cont">WILDLIFE AND NATURE</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                <h3 class="four_slide_new_slider_3_man-exprience-head">Free Tree pocket - Mt cootha</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>WILDLIFE AND NATURE</h2>
+                                      <p>Wildlife and nature represent the incredible diversity of life on our planet,
+                                      encompassing everything from majestic mammals to vibrant plant life. This intricate
+                                      tapestry of ecosystems plays a crucial role in maintaining the health of our environment
+                                      and sustaining human life. As we explore the wonders of wildlife and nature, we not only deepen
+                                      our appreciation for the natural world but also understand our responsibility to protect it for future generations.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">MOVE</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Build strength to avoid re-injury</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                                <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                               <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">HOME GAMING HANGOUT</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                 <h3 class="four_slide_new_slider_3_man-exprience-head">Your place</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>HOME GAMING HANGOUT</h2>
+                                      <p>The beauty of a home gaming hangout lies in its ability to strengthen
+                                      relationships through shared experiences. The combination of teamwork, competition,
+                                      and camaraderie fosters bonds that can extend beyond the virtual world. It’s a chance
+                                      to connect with friends and family, escape the stresses of everyday life, and create a sense of community through gaming.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">NATIONAL PARK WALKS</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Mount Coot-tha Reserve, D'Aguilar national park +</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    
+                    
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                                   <img src="/gritlife/assests/slider2img.png" alt="Slide 1">
+                               <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">ADVENTURE AND RELAXATION</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                  <h3 class="four_slide_new_slider_3_man-exprience-head">West End</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>ADVENTURE AND RELAXATION</h2>
+                                      <p>In our fast-paced world, the pursuit of adventure and relaxation may seem at odds,
+                                      yet they form a harmonious balance that can enrich our lives. Embracing both the thrill 
+                                      of exploration and the serenity of calm can lead to a fulfilling lifestyle that nurtures 
+                                      both our physical and mental well-being. Whether through exhilarating outdoor activities 
+                                      or tranquil moments of reflection, adventure and relaxation can complement each other, creating a holistic approach to happiness.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>    
+                        
+                    </div>
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">SOUTH BANK BEACH</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">South Bank</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                         <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                             <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/slider2img222new.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">URBAN ADVENTURE</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                    <h3 class="four_slide_new_slider_3_man-exprience-head">Toowong - West End - Toowong</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>URBAN ADVENTURE</h2>
+                                      <p>Urban adventure offers a unique way to experience the vibrant life of a city, combining exploration,
+                                      culture, and excitement in one exhilarating package. Unlike traditional outdoor adventures, urban exploration
+                                      encourages participants to engage with their surroundings in creative and often unexpected ways. From navigating
+                                      bustling streets and uncovering hidden gems to indulging in local cuisines and experiencing the rich cultural tapestry,
+                                      an urban adventure invites everyone to discover the heartbeat of the city.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Gold Coast</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                            <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">WILDLIFE AND NATURE</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                    <h3 class="four_slide_new_slider_3_man-exprience-head">Fig Tree pocket - Mt cootha</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>WILDLIFE AND NATURE</h2>
+                                      <p>Wildlife and nature represent the incredible diversity of life on our planet, encompassing everything
+                                      from majestic mammals to vibrant plant life. This intricate tapestry of ecosystems plays a crucial role in
+                                      maintaining the health of our environment and sustaining human life. As we explore the wonders of wildlife and nature,
+                                      we not only deepen our appreciation for the natural world but also understand our responsibility to protect it for future generations.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                     <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <!--<div class="four_slide_new_slider_3_manexprieninner-cont-box">-->
+                        <!--    <img src="/gritlife/assests/slider3img3.png" alt="Slide 1">-->
+                        <!--    <div class="four_slide_new_slider_3_exprienceslider-content">-->
+                        <!--        <p class="four_slide_new_slider_3_mantop-exprince-cont">GOLD COAST BEACH TRIP</p>-->
+                        <!--        <div class="four_slide_new_slider_3_morni-exp-cont">-->
+                        <!--            <h3 class="four_slide_new_slider_3_man-exprience-head">Gold Coast</h3>-->
+                        <!--            <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            <div class="flip-box">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                            <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                               <p class="four_slide_new_slider_3_mantop-exprince-cont">HOME GAMING HANGOUT</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                     <h3 class="four_slide_new_slider_3_man-exprience-head">Your place</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                                
+                                <div class="flip-box-back">
+                                    <div class="flipback-content">
+                                      <h2>HOME GAMING HANGOUT</h2>
+                                      <p>The beauty of a home gaming hangout lies in its ability to strengthen
+                                      relationships through shared experiences. The combination of teamwork, competition,
+                                      and camaraderie fosters bonds that can extend beyond the virtual world. It’s a chance
+                                      to connect with friends and family, escape the stresses of everyday life, and create a sense of community through gaming.</p>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="four_slide_new_slider_3_expience-innerslide3-1">
+                        <div class="four_slide_new_slider_3_manexprieninner-cont-box">
+                            <img src="/gritlife/assests/newslider2img.png" alt="Slide 1">
+                            <div class="four_slide_new_slider_3_exprienceslider-content">
+                                <p class="four_slide_new_slider_3_mantop-exprince-cont">HOME GAMING HANGOUT</p>
+                                <div class="four_slide_new_slider_3_morni-exp-cont">
+                                    <h3 class="four_slide_new_slider_3_man-exprience-head">Your place</h3>
+                                    <a href="#" class="four_slide_new_slider_3_manlearnmore-exprien">Learn more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="four_slide_new_slider_3_exprinceslider-controls">
+                    <button class="four_slide_new_slider_3_exprienceprev" id="four_slide_new_slider_3_prevBtn3-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436.494a1 1 0 0 1 1.414 0l6.857 6.857a1 1 0 0 1-1.414 1.414L9.436 1.908a1 1 0 0 1 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M9.436 15.622a1 1 0 0 1 0-1.414l6.857-6.857a1 1 0 1 1 1.414 1.414l-6.857 6.857a1 1 0 0 1-1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                    <button class="four_slide_new_slider_3_expriencenext" id="four_slide_new_slider_3_nextBtn3-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" fill="none" viewBox="0 0 18 16" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M0 8.058a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H1a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M8.568.494a1 1 0 0 0-1.414 0l-6.857 6.857a1 1 0 0 0 1.414 1.414L8.568 1.908a1 1 0 0 0 0-1.414Z" clip-rule="evenodd"></path><path fill="#1F222C" fill-rule="evenodd" d="M8.568 15.622a1 1 0 0 0 0-1.414l-6.857-6.857a1 1 0 1 0-1.414 1.414l6.857 6.857a1 1 0 0 0 1.414 0Z" clip-rule="evenodd"></path></svg></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+     .four_slide_new_slider_3_exprience-slider3-1 {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    
+    .four_slide_new_slider_3_expience-innerslide3-1 {
+        min-width: 25%; /* 4 slides */
+        box-sizing: border-box;
+        /* Adjust width for different screen sizes */
+    }
+    
+    @media (max-width: 768px) {
+        .four_slide_new_slider_3_expience-innerslide3-1 {
+            min-width: 33.33%; /* 3 slides in tab view */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .four_slide_new_slider_3_expience-innerslide3-1 {
+            min-width: 100%; /* 1 slide in mobile view */
+        }
+    }
+    
+    .four_slide_new_slider_3_exprinceslider-controls {
+        display: flex;
+        justify-content: inherit !important;
+        margin-top: 10px;
+    }
+      
+    </style>
+    
+    <script>
+        
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll('.four_slide_new_slider_3_expience-innerslide3-1');
+        const totalSlides = slides.length;
+        const slidesToShow = 4; // default: 4 slides
+        const slidesToShowTab = 3; // tab: 3 slides
+        const slidesToShowMobile = 1; // mobile: 1 slide
+    
+        let currentIndex = 0;
+    
+        const sliderContainer = document.querySelector('.four_slide_new_slider_3_exprience-slider3-1');
+    
+        function updateSlider() {
+            const width = getWidth();
+            const offset = -currentIndex * width;
+            sliderContainer.style.transform = `translateX(${offset}px)`;
+        }
+    
+        function getWidth() {
+            if (window.innerWidth <= 480) {
+                return sliderContainer.clientWidth; // 1 slide on mobile
+            } else if (window.innerWidth <= 768) {
+                return sliderContainer.clientWidth / slidesToShowTab; // 3 slides in tab view
+            } else {
+                return sliderContainer.clientWidth / slidesToShow; // 4 slides by default
+            }
+        }
+    
+        document.getElementById('four_slide_new_slider_3_nextBtn3-1').addEventListener('click', function () {
+            if (currentIndex < totalSlides - slidesToShow) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+    
+        document.getElementById('four_slide_new_slider_3_prevBtn3-1').addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+    
+        // Handle window resizing
+        window.addEventListener('resize', updateSlider);
+    
+        // Initial update
+        updateSlider();
+    });
+    
+    
+    </script>
+    
+    <!--======================================================================-->
+     <div id="footer-placeholder"></div>
+    
+        <script>
+            // Function to load HTML content from external files
+            const loadFile = (id, url) => {
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById(id).innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error(`Error loading ${url}:`, error);
+                    });
+            };
+    
+            // Load header and footer files on DOMContentLoaded
+            document.addEventListener("DOMContentLoaded", function() {
+                loadFile("header-placeholder", "https://server1.xploreseo.com/gritlife/header.html");
+                loadFile("footer-placeholder", "https://server1.xploreseo.com/gritlife/footer.html");
+            });
+        </script>
+    
+    </div>
+    
+    </html>

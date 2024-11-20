@@ -1,0 +1,1066 @@
+<div id="carers-page-main">
+ <html lang="en">
+ 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gritlife</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+ <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $(window).scroll(function() {
+
+   if ($(document).scrollTop() > 50) {
+     $(".header").addClass("scrollclass_header");
+   } else {
+      $(".header").removeClass("scrollclass_header");
+     }
+   });
+  
+
+    $('.mobile-menu').click(function() {
+        
+        $('.mobile-navbar').slideToggle(); // Toggles the display of .mobile-navbar
+        $(this).find('i').css('color', '#000'); // Change the color of the <i> element
+    });
+});
+
+</script>
+
+
+
+
+<script>
+$(document).ready(function(){
+    $('.footer-toggle').click(function() {
+        // Toggle the next element, which is the footer content
+        $(this).next('.footer-content').slideToggle();
+        
+        // // Optionally, toggle a class on the header for an active state
+        // $(this).toggleClass('active');
+    });
+});
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').on('change', validatePhoneNumber);
+        $('#phoneNumber').on('input', validatePhoneNumber);
+
+        function validatePhoneNumber() {
+            const country = $('#countrySelect').val();
+            const phoneNumber = $('#phoneNumber').val();
+            const errorMsg = $('#errorMsg');
+
+            let isValid = false;
+
+            switch(country) {
+                case 'IN': // India
+                    isValid = /^[6-9]\d{9}$/.test(phoneNumber);
+                    break;
+                case 'US': // United States
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'GB': // United Kingdom
+                    isValid = /^7\d{9}$/.test(phoneNumber);
+                    break;
+                case 'CA': // Canada
+                    isValid = /^\d{10}$/.test(phoneNumber);
+                    break;
+                case 'AU': // Australia
+                    isValid = /^(04\d{8})$/.test(phoneNumber);
+                    break;
+                case 'NZ': // New Zealand
+                    isValid = /^(02[0-9]{7})$/.test(phoneNumber);
+                    break;
+                case 'DE': // Germany
+                    isValid = /^(\+49|0)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'FR': // France
+                    isValid = /^(\+33|0)[67]\d{8}$/.test(phoneNumber);
+                    break;
+                case 'IT': // Italy
+                    isValid = /^(3\d{9})$/.test(phoneNumber);
+                    break;
+                case 'BR': // Brazil
+                    isValid = /^(55)(\d{10,11})$/.test(phoneNumber);
+                    break;
+                case 'ZA': // South Africa
+                    isValid = /^(\+27|0)(\d{9})$/.test(phoneNumber);
+                    break;
+                case 'JP': // Japan
+                    isValid = /^(\+81|0)\d{10}$/.test(phoneNumber);
+                    break;
+                case 'CN': // China
+                    isValid = /^1[3-9]\d{9}$/.test(phoneNumber);
+                    break;
+                // Add more country validation patterns as needed
+                default:
+                    isValid = phoneNumber.length > 0; // Simple validation for other countries
+            }
+
+            if (isValid) {
+                errorMsg.text(''); // Clear error message
+            } else {
+                errorMsg.text('Invalid phone number for the selected country.'); // Show error message
+            }
+        }
+    });
+</script>
+<script>
+    $(document).ready(function() {
+        $('#countrySelect').change(function() {
+            $('#countryCode').val($(this).val());
+        });
+    });
+</script>
+
+
+  
+<style>
+.mobile-menu i{
+   color: <?php echo basename($_SERVER['PHP_SELF']) == 'carers.php' ? '#000 !important' : '#fff'; ?>;
+}
+li.list-item-neww {
+    margin-top: 30px;
+}
+.header:hover .buttontop {
+    border-color: rgb(31, 34, 44) !important;
+    color: rgb(31, 34, 44) !important;
+}
+/*div#carers-page-main .header-items img {*/
+/*    filter: brightness(0.8) invert(1);*/
+/*}*/
+
+/*div#carers-page-main .nav-items a {*/
+/*    color: #000 !important;*/
+/*}*/
+
+div#carers-page-main span.buttontop {
+    border-color: #fff;
+    color: rgb(31, 34, 44) !important;
+}
+
+div#carers-page-main .header-btns .contact {
+    background-color: #5993ea !important;
+    border-color: #5993ea !important;
+    color: #fff !important;
+}
+.header-btns a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.header:hover ul.nav-items li a {
+    color: #000 !important;
+}
+.banner-carees-page {
+    background-image: url(/gritlife/assests/desktop_background.jpeg) !important;
+    padding: 250px 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.banner-carees-page h1 {
+    color: #fff !important;
+    font-size: 50px !important;
+}
+.man-button-flex-sec {
+    display: flex;
+    gap: 15px;
+    padding: 4px 16px 4px 4px;
+    background-color: rgb(239, 234, 230);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    padding-left: 22px;
+}
+a.mancarersbutton-link {
+    text-decoration: none;
+    color: #1f222c !important;
+}
+
+.man-carerscont p {
+    font-size: 14px;
+}
+.manimage-carers {
+    background-color: rgb(247, 244, 242);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: all 120ms ease-in-out 0s;
+    width: 13%;
+}
+.man-carerscont {
+    align-items: center;
+    width: 87%;
+    justify-content: center;
+    display: flex;
+}
+section.man_carers-mainsec {
+    padding-top: 150px;
+}    
+.manimage-carers img {
+    width: 100% !important;
+} 
+a.mancarersbutton-link:hover .man-button-flex-sec {
+    background-color: #fff !important;
+    box-shadow: 2px 3px 14px 2px #0000002b;
+}
+.mancarers-tackle-sec {
+    text-align: center;
+    margin-top: 36px;
+}
+h1.heading-man-trac {
+    font-size: 45px;
+    color: #1f222c !important;
+    font-weight: 700 !important;
+    margin: 0 auto;
+}
+
+p.mandesc-tack {
+    padding: 10px 0;
+    line-height: 28px;
+    color: rgb(31, 34, 44);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+span.man-ani-inner-cont {
+    background-color: rgb(239, 234, 230);
+    padding: 18px;
+    border-radius: 100%;
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease 0s;
+}
+
+button.mananimat-button {
+    border-radius: 100px;
+    cursor: pointer;
+    transform-origin: 50% 50%;
+    animation: 1000ms ease-in-out 0s infinite alternate none running jump;
+    border: 2px solid rgb(239, 234, 230);
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    overflow: visible;
+    background: 0 0;
+    color: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+        margin-top: 50px;
+}
+
+span.man-ani-inner-cont svg {
+    width: 20px;
+}
+.sc-a7eb0d1-5.bTKcQu {
+    display: none !important;
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+p.manporpose-heaimg {
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 1000px;
+    letter-spacing: 1px;
+    opacity: 1;
+    background-color: rgb(239, 234, 230);
+    color: rgb(116, 121, 134);
+    font-weight: 600;
+}
+
+.manmission-contetn {
+    display: flex;
+    max-width: 640px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+h2.manjoin-heading {
+    font-size: 45px;
+    color: #1f222c !important;
+    font-weight: 700 !important;
+    margin: 0 auto;
+    z-index:999;
+}
+
+section.man-mission-sec {
+    padding-top: 200px;
+    position: relative !important;
+    padding-bottom: 200px;
+}
+
+p.mnvission-dic {
+    padding: 10px 0;
+    line-height: 30px;
+    color: rgb(31, 34, 44);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+
+button.manbecom-btn {
+    background-color: #5993ea !important;
+    border-color: #5993ea !important;
+    color: #fff !important;
+    border-radius: 6.25rem;
+    border: 1px solid #fff;
+    background: transparent;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 12px 28px;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+}
+button.manbecom-btn:hover {
+    background-color: #365d95 !important;
+    border-color: #365d95 !important;
+}
+section.manvalue-section {
+    padding: 100px 0px;
+    background: linear-gradient(rgb(238, 244, 253) 0%, rgb(255, 255, 255) 100%);
+    margin-top: 70px;
+    position: relative;
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+p.man-valu-p-cont {
+    padding: 8px 16px;
+    display: inline-block;
+    border-radius: 1000px;
+    letter-spacing: 1px;
+    opacity: 1;
+    background-color: rgb(239, 234, 230);
+    color: rgb(116, 121, 134);
+    font-weight: 600;
+    text-transform: uppercase !important;
+    margin: 23px 0;
+}
+
+h2.mangrilife-cont {
+    font-size: 45px;
+    color: #1f222c !important;
+    font-weight: 700 !important;
+}
+.mancolumn-inner-value h3.man-lead-head {
+    font-size: 20px;
+    color: #1f222c !important;
+    font-weight: 700 !important;
+    padding: 11px 0;
+    padding-bottom: 0;
+}
+
+.mancolumn-inner-value p.mandic-man-value {
+    padding: 10px 0;
+    line-height: 30px;
+    color: rgb(31, 34, 44);
+    font-weight: 500;
+    font-size: 16px;
+}
+.man-flex-inner-columnvalue {
+    display: flex;
+    gap: 30px;
+    margin-top: 80px;
+}
+
+.mancolumn-inner-value {
+    border-radius: 16px;
+    border: 1px solid rgb(231, 234, 240);
+    background: rgb(255, 255, 255);
+    display: grid;
+    cursor: pointer;
+    transition: all 120ms ease-in-out 0s;
+    padding: 30px;
+}
+.mancolumn-inner-value:hover {
+    background-color: rgb(54, 93, 149);
+    border-color: rgb(54, 93, 149);
+    color: rgb(255, 255, 255);
+}
+
+.mancolumn-inner-value:hover h3.man-lead-head {
+    color: #fff !important;
+}
+
+.mancolumn-inner-value:hover p.mandic-man-value {
+    color: #fff !important;
+}
+section.manvalue-section:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 436px;
+    height: 728px;
+    background-image: url(/gritlife/assests/careers_ellipse_ring_left.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+section.manvalue-section:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 436px;
+    height: 728px;
+    background-image: url(/gritlife/assests/careers_ellipse_right.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+h2.man-slider-head-new {
+    font-size: 45px;
+    padding-top: 9px;
+    padding-bottom: 50px;
+    font-style: normal;
+    font-weight: 700;
+    color: rgb(31, 34, 44);
+}
+
+
+ul.maninner-iteamon-scroll 
+ li.list-item-neww p {
+    font-size: 45px;
+    max-width: 992px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    color: rgb(89, 147, 234);
+    opacity: 0.1;
+    padding-bottom: 30px;
+    transition: all 200ms ease-in-out 0s;
+    position: sticky;
+    top: 34vh;
+}
+
+ul.maninner-iteamon-scroll li.list-item-neww {
+    list-style: none;
+}
+section.man-slider-section {
+    padding: 36px 0px 136px;
+    background-color: rgb(238, 244, 253);
+}
+/*ul.maninner-iteamon-scroll  li.list-item-neww::before {*/
+/*    content: "";*/
+/*    width: 2px;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*    right: 0px;*/
+/*    z-index: 1;*/
+/*    background-color: rgb(31, 34, 44);*/
+/*    transition: all 800ms ease-in-out 0s;*/
+/*    opacity: 0.1;*/
+/*}*/
+/*ul.maninner-iteamon-scroll li.list-item-neww::after {*/
+/*    content: "";*/
+/*    width: 2px;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*    right: 0px;*/
+/*    z-index: 1;*/
+/*    background-color: rgb(31, 34, 44);*/
+/*    transition: all 800ms ease-in-out 0s;*/
+/*    height: 100%;*/
+/*    opacity: 1;*/
+/*    border-radius: 1000px 1000px 0px 0px;*/
+/*}*/
+/*ul.maninner-iteamon-scroll  li.list-item-neww {*/
+/*    position: relative;*/
+/*}*/
+section.man_carers-mainsec::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 1200px;
+    height: 1200px;
+    z-index: -1;
+    background: rgb(255, 255, 255);
+    opacity: 0.6;
+    border-radius: 100%;
+    filter: blur(200px);
+}
+section.man_carers-mainsec {
+    position: relative !important;
+}
+.manback-svgimg svg {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+}
+
+.manback-svgimg > svg:first-child {
+    bottom: calc(-43% - 200px);
+    right: calc(50% + 268px);
+    transform: rotateY(180deg);
+}
+
+.manback-svgimg > svg:nth-child(2) {
+    left: calc(50% + 268px);
+    top: calc(50% - 200px);
+}
+.manmain-cont-box-carers {
+    --gridWidth: 160px;
+    --borderWidth: 1px;
+    --structureColor: rgba(0,0,0,0.03);
+    animation: 120ms linear 120ms 1 normal none running jBcSpD;
+    z-index: -1;
+    background-color: rgb(247, 244, 242);
+    background-image: linear-gradient( var(--structureColor) var(--borderWidth),transparent var(--borderWidth) ),linear-gradient(90deg,var(--structureColor) var(--borderWidth),transparent var(--borderWidth));
+    background-size: var(--gridWidth) var(--gridWidth);
+    background-position: left top;
+}
+/******testimonila css**/
+section.man-mission-sec .komCuc {
+    position: absolute;
+    animation-name: EnBHK;
+    animation-direction: normal;
+    animation-duration: 400ms;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+section.man-mission-sec .kvFCdf {
+    cursor: pointer;
+    display: flex;
+    transform-style: preserve-3d;
+    transition: all 120ms ease-in-out 0s;
+}
+section.man-mission-sec .kvFCdf::before, .kvFCdf::after {
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 100%;
+    transform: translate3d(-50%, -50%, -1px);
+    pointer-events: none;
+}
+section.man-mission-sec .kvFCdf img {
+    border: 2px solid white;
+    object-fit: cover;
+    border-radius: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+section.man-mission-sec .kvFCdf::after {
+    display: block;
+    width: 240px;
+    height: 240px;
+    opacity: 0.5;
+}
+section.man-mission-sec .kvFCdf::before, .kvFCdf::after {
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border-radius: 100%;
+    transform: translate3d(-50%, -50%, -1px);
+    pointer-events: none;
+}
+section.man-mission-sec .bTKcQu {
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: flex;
+    height: 44px;
+    width: 44px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transform: translate(-50%, -50%);
+    transition: all 120ms ease-in-out 0s;
+    border-radius: 32px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 8px 0px;
+}
+section.man-mission-sec .bTKcQu img {
+    object-fit: contain;
+}
+section.man-mission-sec .koMJpU {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: flex;
+    width: 280px;
+    padding: 40px 24px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-radius: 16px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 16px 0px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 120ms ease-in-out 0s;
+}
+section.man-mission-sec .koMJpU {
+    transform: translate(-50%, -22px);
+}
+section.man-mission-sec .iOkbVt {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    height: 44px;
+    width: 44px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 32px;
+}
+section.man-mission-sec .hNZGUn {
+    text-align: center;
+    font-size: 14px;
+    line-height: 24px;
+}
+section.man-mission-sec .kqpPSg {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+section.man-mission-sec .kvFCdf:hover {
+    transform: scale(1.05);
+}
+
+section.man-mission-sec .sc-a7eb0d1-3.komCuc {
+    top: 0;
+    left: 25%;
+    width: 7%;
+}
+section.man-mission-sec .eXXzbY {
+    position: absolute;
+    animation-name: EnBHK;
+    animation-direction: normal;
+    animation-duration: 400ms;
+    animation-delay: 150ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+     top: 0;
+    left: 72%;
+    width: 7%;
+}
+
+section.man-mission-sec .dtRAOu {
+    position: absolute;
+    animation-name: EnBHK;
+    animation-direction: normal;
+    animation-duration: 400ms;
+    animation-delay: 600ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    left: 14%;
+    bottom: 20%;
+    width: 7%;
+}
+section.man-mission-sec .sc-a7eb0d1-4.biwFJh {
+    position: absolute;
+    animation-name: EnBHK;
+    animation-direction: normal;
+    animation-duration: 400ms;
+    animation-delay: 450ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    top: 78%;
+    right: 23%;
+    width: 7%;
+}
+section.man-mission-sec .sc-a7eb0d1-4.kPNCUz {
+    position: absolute;
+    animation-name: EnBHK;
+    animation-direction: normal;
+    animation-duration: 400ms;
+    animation-delay: 300ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    top: 39%;
+    left: 80%;
+    width: 7%;
+}
+ .sticky_man_slider {
+    position: sticky;
+    top: 0; /* Adjust based on your layout */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+.highlight p {
+    color: rgb(89, 147, 234) !important;
+    opacity: 2 !important;
+}
+    
+   .maninner-iteamon-scroll {
+    max-height: 200px !important;
+    overflow-y: auto;
+    padding: 10px;
+    list-style-type: none;
+}
+ul.maninner-iteamon-scroll::-webkit-scrollbar {
+    width: 2px;
+    border-radius: 10px !important;
+}
+
+ul.maninner-iteamon-scroll::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+ul.maninner-iteamon-scroll::-webkit-scrollbar-thumb {
+    background-color: #5993ea;
+    outline: 1px solid #5993ea;
+}
+@media (max-width:767px){
+   .man_carers-mainsec {
+    padding-top: 25px !important;
+}
+}
+</style>
+
+<header class="hero-section">
+        <div class="header">
+           <div class="wrapper">
+          <!-- Header Start -->
+          <div class="header-items">
+           <a href="https://server1.xploreseo.com/gritlife/">
+               <img src="/gritlife/assests/logo1-new.png" class="logoimg">
+           </a>
+            <div class="mobile-menu">
+                <i class="bi bi-list"></i>
+            </div>
+            <div class="navbar">
+                <ul class="nav-items">
+                    <li class="link"><a href="/gritlife/"> Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html"> About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html"> Our Careers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html"> Experiences </a></li>
+                    <li class="link"><a href="/gritlife/terms-of-conditions.html"> Terms and Conditions </a></li>
+                    <li class="link"><a href="/gritlife/privacy-policy.html"> Privacy Policy </a></li>
+                    <!--<li class="link"><a href="#">Company &nbsp;<i class="bi bi-chevron-down"></i></a></li>-->
+                </ul>
+            </div>
+            <div class="header-btns">
+                <span class="contact"><a href="https://server1.xploreseo.com/gritlife/contact.html">Contact Us</a></span>
+                <span class="buttontop"><a href="https://server1.xploreseo.com/gritlife/build_your_day.html">Build your day</a></span>
+            </div>
+           </div>
+           <div class="mobile-navbar">
+                <ul class="list-item">
+                    <li class="link"><a href="/gritlife/">Home </a>
+                    </li>
+                    <li class="link"><a href="/gritlife/about.html">About Us</a></li>
+                    <li class="link"><a href="/gritlife/carers.html">Our Carers </a></li>
+                    <li class="link"><a href="/gritlife/experiences.html">Experiences </a></li>
+                </ul>
+            </div>
+           <!-- Header End -->
+          </div>
+            </div>
+            </header>
+<div class="banner-carees-page">
+    <h1>Careers</h1>
+</div>
+
+<div class="manmain-cont-box-carers">
+<section class="man_carers-mainsec">
+    <div class="manback-svgimg">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 800" aria-hidden="true"><path stroke="url(#a)" stroke-width="176" d="M619.326 178.099c122.553 121.13 123.705 318.674 2.575 441.227s-318.674 123.705-441.227 2.575-123.705-318.674-2.575-441.227 318.674-123.705 441.227-2.575Z" opacity="0.5"></path><defs><linearGradient id="a" x1="115.512" x2="684.489" y1="118.813" y2="681.187" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient></defs></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 800 800" aria-hidden="true"><path stroke="url(#a)" stroke-width="176" d="M619.326 178.099c122.553 121.13 123.705 318.674 2.575 441.227s-318.674 123.705-441.227 2.575-123.705-318.674-2.575-441.227 318.674-123.705 441.227-2.575Z" opacity="0.5"></path><defs><linearGradient id="a" x1="115.512" x2="684.489" y1="118.813" y2="681.187" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient></defs></svg>
+    </div>
+    <div class="wrapper">
+        <!--<a href="#" class="mancarersbutton-link">-->
+        <!--    <div class="man-button-flex-sec">-->
+        <!--        <div class="manimage-carers">-->
+        <!--         <img src="assests/forbes_566a48d259.svg" alt="forbesimg">-->
+        <!--         </div>-->
+        <!--         <div class="man-carerscont">-->
+        <!--         <p>Sword Health recognized as America's Best Startup Employers 2024</p><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.146 2.146a.5.5 0 0 0 0 .708L14.293 10l-7.147 7.146a.5.5 0 0 0 .708.708l7.5-7.5a.5.5 0 0 0 0-.708l-7.5-7.5a.5.5 0 0 0-.708 0" clip-rule="evenodd"></path></svg>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!-- </a>-->
+        
+        <div class="mancarers-tackle-sec">
+            <h1 class="heading-man-trac">How Big of a Challenge <br>Are You Ready to Tackle?</h1>
+            <p class="mandesc-tack">Turn Your Passion for Adventure into a Rewarding Career</p>
+            <button href="#"  class="mananimat-button"><span class="man-ani-inner-cont"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20" aria-hidden="true"><path fill="#1F222C" fill-rule="evenodd" d="M10 .857a1 1 0 0 1 1 1v13.586l5.15-5.15a1 1 0 1 1 1.414 1.415l-6.844 6.844-.013.013a1 1 0 0 1-.707.293 1 1 0 0 1-.72-.306l-6.844-6.844a1 1 0 1 1 1.414-1.415L9 15.443V1.857a1 1 0 0 1 1-1" clip-rule="evenodd"></path></svg></span></button>
+        </div>
+    </div>
+</section>
+
+<section class="man-mission-sec">
+      <div class="wrapper">
+           <div class="man-inner-mission-flex">
+                 <div class="manmission-contetn">
+                     <p class="manporpose-heaimg">PURPOSE</p>
+                     <h2 class="manjoin-heading">Join Us on a Mission to Empower Lives</h2>
+                     <p class="mnvission-dic">To achieve our vision, talent is essential-but passion is paramount. Our diverse team is driven by 
+                     a shared commitment to provide innovative, adventurous support that transforms lives. 
+                     At GritLife, we believe in pushing boundaries and creating unforgettable experiences for our clients.</p>
+                     <a href="https://form.jotform.com/241666882173061"><button class="manbecom-btn">Become A Gritlife Guide</button></a> 
+                 </div>
+           </div>
+           
+           <div class="sc-a7eb0d1-3 komCuc">
+               <a role="button" class="sc-a7eb0d1-4 kvFCdf">
+              <img alt="" src="/gritlife/assests/Careers_Testimonials_Joel_ee7b368f75.jpeg" ></a>
+              <div class="sc-a7eb0d1-5 bTKcQu">
+                  <img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                  <blockquote class="sc-50162ed3-0 koMJpU">
+                <div class="sc-50162ed3-3 iOkbVt"><img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                 <p class="sc-50162ed3-1 hNZGUn">My son, I’m now able to run with him. He said, ‘you’re moving pretty good daddy.’ 
+           That's when it all changed. Because of Sword.</p><footer class="sc-50162ed3-2 kqpPSg">Father, husband, and Sword member</footer></blockquote>
+           
+           </div>
+           
+            <div class="sc-a7eb0d1-4 eXXzbY">
+               <a role="button" class="sc-a7eb0d1-4 kvFCdf">
+              <img alt="" src="/gritlife/assests/Careers_Testimonials_Rosie_6441c529b9.jpeg" ></a>
+              <div class="sc-a7eb0d1-5 bTKcQu">
+                  <img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                  <blockquote class="sc-50162ed3-0 koMJpU">
+                <div class="sc-50162ed3-3 iOkbVt"><img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                 <p class="sc-50162ed3-1 hNZGUn">My son, I’m now able to run with him. He said, ‘you’re moving pretty good daddy.’ 
+           That's when it all changed. Because of Sword.</p><footer class="sc-50162ed3-2 kqpPSg">Father, husband, and Sword member</footer></blockquote>
+           
+           </div>
+           
+           <div class="sc-a7eb0d1-4 dtRAOu">
+               <a role="button" class="sc-a7eb0d1-4 kvFCdf">
+              <img alt="" src="/gritlife/assests/Careers_Testimonials_Kelly1.jpeg" ></a>
+              <div class="sc-a7eb0d1-5 bTKcQu">
+                  <img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                  <blockquote class="sc-50162ed3-0 koMJpU">
+                <div class="sc-50162ed3-3 iOkbVt"><img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                 <p class="sc-50162ed3-1 hNZGUn">My son, I’m now able to run with him. He said, ‘you’re moving pretty good daddy.’ 
+           That's when it all changed. Because of Sword.</p><footer class="sc-50162ed3-2 kqpPSg">Father, husband, and Sword member</footer></blockquote>
+           
+           </div>
+           
+            <div class="sc-a7eb0d1-4 biwFJh">
+               <a role="button" class="sc-a7eb0d1-4 kvFCdf">
+              <img alt="" src="/gritlife/assests/Careers_Testimonials_Cindy_1234.jpeg" ></a>
+              <div class="sc-a7eb0d1-5 bTKcQu">
+                  <img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                  <blockquote class="sc-50162ed3-0 koMJpU">
+                <div class="sc-50162ed3-3 iOkbVt"><img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                 <p class="sc-50162ed3-1 hNZGUn">My son, I’m now able to run with him. He said, ‘you’re moving pretty good daddy.’ 
+           That's when it all changed. Because of Sword.</p><footer class="sc-50162ed3-2 kqpPSg">Father, husband, and Sword member</footer></blockquote>
+           
+           </div>
+           <div class="sc-a7eb0d1-4 kPNCUz">
+               <a role="button" class="sc-a7eb0d1-4 kvFCdf">
+              <img alt="" src="/gritlife/assests/image234.jpeg" ></a>
+              <div class="sc-a7eb0d1-5 bTKcQu">
+                  <img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                  <blockquote class="sc-50162ed3-0 koMJpU">
+                <div class="sc-50162ed3-3 iOkbVt"><img src="/gritlife/assests/quote.svg" alt="" width="20" height="20"></div>
+                 <p class="sc-50162ed3-1 hNZGUn">My son, I’m now able to run with him. He said, ‘you’re moving pretty good daddy.’ 
+           That's when it all changed. Because of Sword.</p><footer class="sc-50162ed3-2 kqpPSg">Father, husband, and Sword member</footer></blockquote>
+           
+           </div>
+           
+           
+           <!--<div class="manmissin-seci-image-box">-->
+           <!--      <div class="manimage1-div">-->
+           <!--          <a href="#" class="image-man-inner-columntstimol"><img src="/gritlife/assests/Careers_Testimonials_Joel_ee7b368f75.jpeg" alt="solution"></a>-->
+           <!--          <div class="manquoteimg">-->
+           <!--              <img src="/gritlife/assests/quote.svg" alt="solution">-->
+           <!--          </div>-->
+           <!--          <blockquote class="mandichover mankoMJpU">-->
+           <!--             <div class="maninner-col-cont maniOkbVt">-->
+           <!--             <img src="/gritlife/assets/quote.svg" alt="" width="20" height="20">-->
+           <!--             </div>-->
+           <!--             <p class="mantestdic-cont manthNZGUn">My son, I’m now able to run with him. He said,-->
+           <!--              ‘you’re moving pretty good daddy.’ That's when it all changed.-->
+           <!--              Because of Sword.</p>-->
+           <!--              <footer class="footer-cont-testim mantesmonialkqpPSg">Father, husband, and Sword member</footer>-->
+           <!--          </blockquote>-->
+                     
+           <!--      </div>-->
+           <!--</div>-->
+           
+      </div>
+</section>
+
+<section class="manvalue-section">
+     <div class="wrapper">
+           <div class="manvalune-inner-cont">
+               <p class="man-valu-p-cont">Values</p>
+               <h2 class="mangrilife-cont">Why GritLife?</h2>
+           </div>
+           
+           <div class="man-flex-inner-columnvalue">
+                
+                 
+                 <div class="mancolumn-inner-value">
+                     <img src="/gritlife/assests/Values Icons2.svg" alt="img1">
+                     <h3 class="man-lead-head">Lead with lucrative rewards</h3>
+                     <p class="mandic-man-value">We offer industry-leading pay scales and incentive programs designed to acknowledge and reward your hard work and dedication. Thrive in a career that compensates as well as it inspires.</p>
+                 </div>
+                 
+                  <div class="mancolumn-inner-value">
+                     <img src="/gritlife/assests/Values Icons1.svg" alt="img1">
+                     <h3 class="man-lead-head">Innovate and Inspire</h3>
+                     <p class="mandic-man-value">Work in an environment that embraces innovation. We encourage creative thinking and novel approaches to care, 
+                     offering continuous training and professional development to keep you at the forefront of the industr</p>
+                 </div>
+                 
+                 <div class="mancolumn-inner-value">
+                     <img src="/gritlife/assests/Values Icons3.svg" alt="img1">
+                     <h3 class="man-lead-head">Flexibility at your fingertips</h3>
+                     <p class="mandic-man-value">Manage your own schedule with our flexible working options. At GritLife, we value your need for 
+                     a work-life balance that suits your lifestyle and allows you to perform at your best.</p>
+                 </div>
+           </div>
+     </div>
+    
+</section>
+
+<section class="man-slider-section">
+     <div class="wrapper">
+           <div class="man-cont-slider-box">
+               <div class="slider-header">
+                   <div class="man-drdbuB">
+                   <p class="man-valu-p-cont">Culture</p>
+                    <h2 class="man-slider-head-new">Personal Qualities We Value</h2>
+                    </div>
+               </div>
+               <ul class="maninner-iteamon-scroll">
+                   <li class="list-item-neww"><p>you have a genuine love for the outdoors and a passion for exploring new challenges.</p></li>
+                    <li class="list-item-neww"><p>believe that changing the world isn't confined to 9-to-5?</p></li>
+                     <li class="list-item-neww"><p>approach your work with a sense of ownership?</p></li>
+                      <li class="list-item-neww"><p>get energized by big challenges?</p></li>
+                       <li class="list-item-neww"><p>find creative ways to deliver excellent work in half the time?</p></li>
+                        <li class="list-item-neww"><p>persist through the toughest obstacles because failure is not an option?</p></li>
+                        
+                        <li style="opacity:0 !important;" class="list-item-neww"><p>persist through the toughest obstacles because failure is not an option?</p></li>
+               </ul>
+               
+               
+           </div>
+     </div>
+    
+</section>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+<script>
+$(document).ready(function() {
+    var $ul = $(".maninner-iteamon-scroll");
+    var $listItems = $ul.find("li");
+
+    // Add highlight class to the first li by default
+    $listItems.first().addClass("highlight");
+
+    $ul.on("scroll", function() {
+        // Get the vertical center of the ul
+        var ulCenter = $ul.offset().top + $ul.height() / 2;
+
+        $listItems.each(function() {
+            var $li = $(this);
+            // Get the vertical center of each li
+            var liCenter = $li.offset().top + $li.height() / 2;
+
+            // Check if the li center is near the ul center
+            if (liCenter <= ulCenter + 50 && liCenter >= ulCenter - 50) {
+                // Remove highlight from all li elements
+                $listItems.removeClass("highlight");
+
+                // Add highlight to the current li
+                $li.addClass("highlight");
+            }
+        });
+    });
+});
+</script>
+
+</div>
+       	
+ <div id="footer-placeholder"></div>
+
+    <script>
+        // Function to load HTML content from external files
+        const loadFile = (id, url) => {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                })
+                .catch(error => {
+                    console.error(`Error loading ${url}:`, error);
+                });
+        };
+
+        // Load header and footer files on DOMContentLoaded
+        document.addEventListener("DOMContentLoaded", function() {
+            loadFile("header-placeholder", "https://server1.xploreseo.com/gritlife/header.html");
+            loadFile("footer-placeholder", "https://server1.xploreseo.com/gritlife/footer.html");
+        });
+    </script>
+</div>
+
+</html>

@@ -1,0 +1,14 @@
+[21-Oct-2024 07:24:09 UTC] PHP Warning:  include_once(header.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 07:24:09 UTC] PHP Warning:  include_once(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 07:24:09 UTC] PHP Warning:  include_once(footer.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/index.php on line 747
+[21-Oct-2024 07:24:09 UTC] PHP Warning:  include_once(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/index.php on line 747
+[21-Oct-2024 07:24:57 UTC] PHP Warning:  include_once(header.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 07:24:57 UTC] PHP Warning:  include_once(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 07:25:10 UTC] PHP Warning:  include_once(header.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 07:25:10 UTC] PHP Warning:  include_once(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/index.php on line 21
+[21-Oct-2024 11:52:48 UTC] PHP Warning:  include_once(header.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/about.php on line 201
+[21-Oct-2024 11:52:48 UTC] PHP Warning:  include_once(): Failed opening 'header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/about.php on line 201
+[21-Oct-2024 11:52:48 UTC] PHP Warning:  include_once(footer.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/about.php on line 300
+[21-Oct-2024 11:52:48 UTC] PHP Warning:  include_once(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/about.php on line 300
+[21-Oct-2024 11:52:54 UTC] PHP Warning:  include_once(footer.php): failed to open stream: No such file or directory in /home/server1/public_html/gritlife/about.php on line 304
+[21-Oct-2024 11:52:54 UTC] PHP Warning:  include_once(): Failed opening 'footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/server1/public_html/gritlife/about.php on line 304
