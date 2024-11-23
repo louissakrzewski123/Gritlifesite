@@ -1,973 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gritlife</title>
     <link rel="stylesheet" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript" charset="utf-8"></script>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-$(document).ready(function() {
-  $(window).scroll(function() {
-
-   if ($(document).scrollTop() > 50) {
-     $(".header").addClass("scrollclass_header");
-   } else {
-      $(".header").removeClass("scrollclass_header");
-     }
-   });
-  
-
-    $('.mobile-menu').click(function() {
-        
-        $('.mobile-navbar').slideToggle(); // Toggles the display of .mobile-navbar
-        $(this).find('i').css('color', '#000'); // Change the color of the <i> element
-    });
-});
-
-</script>
-
-
-
-
-<script>
-$(document).ready(function(){
-    $('.footer-toggle').click(function() {
-        // Toggle the next element, which is the footer content
-        $(this).next('.footer-content').slideToggle();
-        
-        // // Optionally, toggle a class on the header for an active state
-        // $(this).toggleClass('active');
-    });
-});
-</script>
-<script>
-    $(document).ready(function() {
-        $('#countrySelect').on('change', validatePhoneNumber);
-        $('#phoneNumber').on('input', validatePhoneNumber);
-
-        function validatePhoneNumber() {
-            const country = $('#countrySelect').val();
-            const phoneNumber = $('#phoneNumber').val();
-            const errorMsg = $('#errorMsg');
-
-            let isValid = false;
-
-            switch(country) {
-                case 'IN': // India
-                    isValid = /^[6-9]\d{9}$/.test(phoneNumber);
-                    break;
-                case 'US': // United States
-                    isValid = /^\d{10}$/.test(phoneNumber);
-                    break;
-                case 'GB': // United Kingdom
-                    isValid = /^7\d{9}$/.test(phoneNumber);
-                    break;
-                case 'CA': // Canada
-                    isValid = /^\d{10}$/.test(phoneNumber);
-                    break;
-                case 'AU': // Australia
-                    isValid = /^(04\d{8})$/.test(phoneNumber);
-                    break;
-                case 'NZ': // New Zealand
-                    isValid = /^(02[0-9]{7})$/.test(phoneNumber);
-                    break;
-                case 'DE': // Germany
-                    isValid = /^(\+49|0)(\d{10,11})$/.test(phoneNumber);
-                    break;
-                case 'FR': // France
-                    isValid = /^(\+33|0)[67]\d{8}$/.test(phoneNumber);
-                    break;
-                case 'IT': // Italy
-                    isValid = /^(3\d{9})$/.test(phoneNumber);
-                    break;
-                case 'BR': // Brazil
-                    isValid = /^(55)(\d{10,11})$/.test(phoneNumber);
-                    break;
-                case 'ZA': // South Africa
-                    isValid = /^(\+27|0)(\d{9})$/.test(phoneNumber);
-                    break;
-                case 'JP': // Japan
-                    isValid = /^(\+81|0)\d{10}$/.test(phoneNumber);
-                    break;
-                case 'CN': // China
-                    isValid = /^1[3-9]\d{9}$/.test(phoneNumber);
-                    break;
-                // Add more country validation patterns as needed
-                default:
-                    isValid = phoneNumber.length > 0; // Simple validation for other countries
-            }
-
-            if (isValid) {
-                errorMsg.text(''); // Clear error message
-            } else {
-                errorMsg.text('Invalid phone number for the selected country.'); // Show error message
-            }
-        }
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#countrySelect').change(function() {
-            $('#countryCode').val($(this).val());
-        });
-    });
-</script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
 <body>
- <header class="hero-section">
-        <div class="header">
-           <div class="wrapper">
-          <!-- Header Start -->
-          <div class="header-items">
-           <a href="https://server1.xploreseo.com/gritlife/">
-               <img src="/gritlife/assests/logo1-new.png" class="logoimg">
-           </a>
-            <div class="mobile-menu">
-                <i class="bi bi-list"></i>
+<header class="hero-section">
+    <div class="header">
+        <div class="wrapper">
+            <div class="header-items">
+                <a href="index.html">
+                    <img src="assets/logo1-new.png" class="logoimg" alt="Gritlife Logo">
+                </a>
+                <div class="mobile-menu">
+                    <i class="bi bi-list"></i>
+                </div>
+                <div class="navbar">
+                    <ul class="nav-items">
+                        <li class="link"><a href="index.html">Home</a></li>
+                        <li class="link"><a href="about.html">About Us</a></li>
+                        <li class="link"><a href="carers.html">Our Carers</a></li>
+                        <li class="link"><a href="experiences.html">Experiences</a></li>
+                        <li class="link"><a href="terms-of-conditions.html">Terms and Conditions</a></li>
+                        <li class="link"><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="header-btns">
+                    <span class="contact"><a href="contact.html">Contact Us</a></span>
+                    <span class="buttontop"><a href="build_your_day.html">Build your day</a></span>
+                </div>
             </div>
-            <div class="navbar">
-                <ul class="nav-items">
-                    <li class="link"><a href="/gritlife/"> Home </a>
-                    </li>
-                    <li class="link"><a href="/gritlife/about.html"> About Us</a></li>
-                    <li class="link"><a href="/gritlife/carers.html"> Our Careers </a></li>
-                    <li class="link"><a href="/gritlife/experiences.html"> Experiences </a></li>
-                    <li class="link"><a href="/gritlife/terms-of-conditions.html"> Terms and Conditions </a></li>
-                    <li class="link"><a href="/gritlife/privacy-policy.html"> Privacy Policy </a></li>
-                    <!--<li class="link"><a href="#">Company &nbsp;<i class="bi bi-chevron-down"></i></a></li>-->
-                </ul>
-            </div>
-            <div class="header-btns">
-                <span class="contact"><a href="https://server1.xploreseo.com/gritlife/contact.html">Contact Us</a></span>
-                <span class="buttontop"><a href="https://server1.xploreseo.com/gritlife/build_your_day.html">Build your day</a></span>
-            </div>
-           </div>
-           <div class="mobile-navbar">
+            <div class="mobile-navbar">
                 <ul class="list-item">
-                    <li class="link"><a href="/gritlife/">Home </a>
-                    </li>
-                    <li class="link"><a href="/gritlife/about.html">About Us</a></li>
-                    <li class="link"><a href="/gritlife/carers.html">Our Carers </a></li>
-                    <li class="link"><a href="/gritlife/experiences.html">Experiences </a></li>
+                    <li class="link"><a href="index.html">Home</a></li>
+                    <li class="link"><a href="about.html">About Us</a></li>
+                    <li class="link"><a href="carers.html">Our Carers</a></li>
+                    <li class="link"><a href="experiences.html">Experiences</a></li>
                 </ul>
-            </div>
-           <!-- Header End -->
-          </div>
-            </div>
-            </header>
-
-
-   <div id="homepage">
-    
-            <!-- Video Start -->
-            <div class="video-section-new-top">
-            <video playsinline="playsinline" autoplay="autoplay"  muted="muted" loop="loop" class="video-herosec">
-            <source src="https://server1.xploreseo.com/gritlife/assests/Website_Header_Video_H264_1080p_4Mbps_DESKTOP.mp4" type="video/mp4" />
-          </video>
-          <!-- Video End -->
-        </div> 
-        <!-- Hero Section Content Start -->
-        <div class="hero-section-content">
-            <div class="wrapper">
-               <div class="content">
-                <h3>
-                    Break Free from the Ordinary Life
-                </h3>
-                <span><a href="https://server1.xploreseo.com/gritlife/build_your_day.html">Join the fun</a></span>
-               </div>
-            </div>
-        </div>
-        <!-- Hero Section Content End -->     
-
-    
-    <!--<section class="manslider-auto">-->
-    <!--    <div class="wrapper">-->
-    <!--        <div class="man-flex-sec">-->
-    <!--            <div class="mancontent-head">-->
-    <!--                <h3>Over 10 million lives covered</h3>-->
-    <!--            </div>-->
-    <!--              <div class="slider">-->
-    <!--                  <div class="slide-track">-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/humana_3ad3ff2a45.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/Danaher_logo_74e9f0928f.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/Dominos_logo_5639f791eb.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/health_0696ab240e.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/concordia_7894e7bf7c.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/cisco_f5bb982887.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/carters_7d3f5db9a0.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/humana_3ad3ff2a45.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/Danaher_logo_74e9f0928f.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/humana_3ad3ff2a45.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/health_0696ab240e.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/concordia_7894e7bf7c.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/cisco_f5bb982887.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/carters_7d3f5db9a0.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/humana_3ad3ff2a45.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/Danaher_logo_74e9f0928f.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/Dominos_logo_5639f791eb.png" alt="">-->
-    <!--                    </div>-->
-    <!--                    <div class="slide">-->
-    <!--                      <img src="/gritlife/assests/concordia_7894e7bf7c.png" alt="">-->
-    <!--                    </div>-->
-    <!--                  </div>-->
-    <!--                </div> -->
-                
-                
-                
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</section>-->
-    
-    <section class="solutions-section">
-        <div class="dot-indicator">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-        <div class="wrapper">
-            <div class="solution-sect">
-                
-               <div class="solution-container">
-                <div class="solution-details">
-                    <p class="solution-title">Our Solutions</p>
-                    <h3 class="solution-heading">
-                        Meet GritLife
-                    </h3>
-                    <p class="solutions">
-                        Break the Mould with GritLife: Leading the NDIS Industry with Engaging, Edge-of-Your-Seat Experiences
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="/gritlife/assests/image111.png" alt="solution">
-                </div>
-               </div>
-               <div class="solution-container">
-                <div class="solution-details">
-                    <h3 class="solution-heading">
-                        Push Limits, Grow Stronger
-                    </h3>
-                    <p class="solutions">
-                        Our bold approach fosters true personal growth. GritLife offers NDIS-supported activities designed to challenge and inspire. Say goodbye to overly protective care and hello to thrilling,
-transformative experiences. Empower yourself to achieve new heights with our dynamic, limit- pushing adventures!
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="assests/thrive-img.png" alt="solution">
-                </div>
-               </div>
-               <div class="solution-container">
-                <div class="solution-details">
-                    <h3 class="solution-heading">
-                        Perfect Match for Every Adventure
-                    </h3>
-                    <p class="solutions">
-                        No more settling for less. Our adventure partners are chosen to perfectly match your energy and passion. Experience the difference with
-companions who are ready to dive into every challenge with you, ensuring every session is as exhilarating as it is transformative. Push limits and grow stronger with a partner who truly gets you!
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="assests/three-newimg.png" alt="solution">
-                </div>
-               </div>
-               <div class="solution-container">
-                <div class="solution-details">
-                    <h3 class="solution-heading">
-                        Shape Every Moment: Your Day, Your Way
-                    </h3>
-                    <p class="solutions">
-                        With GritLife, you have the power to design each support session to fit your needs and passions. Our unique 'Build Your Day' feature 
-                        lets you choose from a variety of main and supplementary activities, ensuring every moment is engaging and purposeful. No more wasted time or dead space just 
-                        seamless, dynamic experiences that keep you moving and growing. Enjoy complete autonomy and make the most of every day with GritLife.
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="assests/imagenew1.png" alt="solution">
-                </div>
-               </div>
-               <div class="solution-container">
-                <div class="solution-details">
-                    <h3 class="solution-heading">
-                        Conquer the Confusion: Your Simple NDIS Solution
-                    </h3>
-                    <p class="solutions">
-                       Navigating the complexities of NDIS support can be daunting, 
-                       but GritLife simplifies everything. We offer clear documentation and 
-                       reporting, seamless coordination of supports, and straightforward pricing and billing. 
-                       Activities are easily categorised into paid and free options, accessible with a Companion Card, ensuring no unexpected costs. Our comprehensive approach removes confusion, 
-                       making it easy for you to focus on your adventures while we handle the details. With GritLife, experience support that's transparent, organised, and stress-free.
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="assests/predectimage1.png" alt="solution">
-                </div>
-               </div>
-               <div class="solution-container">
-                <div class="solution-details">
-                    <h3 class="solution-heading">
-                        Excitement Meets Security: Pushing Limits, Keeping it Safe
-                    </h3>
-                    <p class="solutions">
-                        Get ready for adventures that are both thrilling and safe. Each activity is carefully crafted to 
-                        challenge and excite, all while prioritising safety. Our pros undergo specific training for every adventure, mastering all the ins and outs to ensure a smooth, fun experience. Watch your young adventurers push their limits, gain new skills, and thrive, all under the expert watch of our fearless guides. Rest easy, the excitement is real,
-and the safety is top-notch.
-                    </p>
-                </div>
-                <div class="solution-img">
-                    <img src="assests/oncall-img.png" alt="solution">
-                </div>
-               </div>
-               <!--<div class="solution-container">-->
-               <!-- <div class="solution-details">-->
-               <!--     <h3 class="solution-heading">-->
-               <!--         Academy-->
-               <!--     </h3>-->
-               <!--     <p class="solutions">-->
-               <!--         Academy is an in-app library of high-quality video content to help members understand pain, reduce injury risk, and build healthy habits. Members can learn about sleep, nutrition, pain prevention, pelvic health, and more—all directly from clinical experts.-->
-               <!--     </p>-->
-               <!-- </div>-->
-               <!-- <div class="solution-img">-->
-               <!--     <img src="assests/Academy.png" alt="solution">-->
-               <!-- </div>-->
-               <!--</div>-->
-               <!--<div class="solution-container">-->
-               <!-- <div class="solution-details">-->
-               <!--     <h3 class="solution-heading">-->
-               <!--         Atlas-->
-               <!--     </h3>-->
-               <!--     <p class="solutions">-->
-               <!--         By delivering clinically validated exercises and education to employees around the world, Atlas helps international organizations promote health equity, while driving down healthcare costs and giving employees the opportunity to live life free from pain.-->
-               <!--     </p>-->
-               <!-- </div>-->
-               <!-- <div class="solution-img">-->
-               <!--     <img src="https://server1.xploreseo.com/gritlife/assests/Atlas.png" alt="solution">-->
-               <!-- </div>-->
-               <!--</div>-->
-            </div>
-        </div>
-    </section>
-    <!--<section class="man-counter-section">-->
-    <!--    <div class="wrapper">-->
-    <!--        <div class="back-color1"></div>-->
-    <!--         <div class="back-color2"></div>-->
-    <!--          <div class="back-color2"></div>-->
-    <!--        <h2 class="mancount-number">$640,590,849</h2>-->
-    <!--        <h4 class="mancustom-headeing">Customer savings delivered to date</h4>-->
-    <!--        <p class="man-dis-cont">By helping members avoid surgery, ER visits, and painkillers, we drastically reduce medical spending -->
-    <!--        through clinical outcomes that are unmatched. As confirmed in an independent study, Sword delivers:</p>-->
-           
-    <!--       <div class="flex-cont-man">-->
-    <!--           <div class="inner-cont-manbox">-->
-    <!--               <h5 class="heaing-new">3.2:1</h5>-->
-    <!--                <p class="discripton-new">The industry’s highest independently validated gross savings ratio<sup>1</sup></p>-->
-    <!--           </div>-->
-    <!--            <div class="inner-cont-manbox">-->
-    <!--               <h5 class="heaing-new">$3,177</h5>-->
-    <!--                <p class="discripton-new">Customer savings per member per year on care for MSK disorders and related chronic conditions<sup>2</sup></p>-->
-    <!--           </div>-->
-               
-    <!--            <div class="inner-cont-manbox">-->
-    <!--               <h5 class="heaing-new">50%</h5>-->
-    <!--                <p class="discripton-new">Reduction in the rate of costly surgeries<sup>3</sup></p>-->
-    <!--           </div>-->
-    <!--       </div>-->
-    <!--    </div>-->
-        
-    <!--</section>-->
-    
-    
-    
- <!--    <section class="ai-care-section">-->
- <!--      <div class="wrapper">-->
- <!--       <div class="ai-care">-->
- <!--           <p class="sub-heading">Ai Care</p>-->
- <!--           <h2 class="heading">AI Care = Human clinicians + AI</h2>-->
- <!--           <p class="ai-intro">When the power of human-in-the-loop AI meets expert clinicians, world-class care is infinitely more convenient, accessible, and scalable. Everyone gets the care they deserve, and companies save money. The ultimate win-win.</p>-->
- <!--           <span class="learn-more">Learn More &nbsp; <i class="bi bi-chevron-right"></i></span>-->
- <!--       </div>-->
- <!--      </div>-->
-
- <!--   </section>-->
-    
-	<!--<section class="slider-section-bottom">-->
-	<!--	   <div class="wrapper">-->
-	<!--			<div class="man-human-section-flex">-->
-	<!--			    <div class="man-human-inner-cont">-->
-	<!--			        <div class="background-grid-color1"></div>-->
-	<!--			        <h3 class="manhuman-heading">Human Clinical Specialist</h3>-->
-	<!--			        <p class="manhuman-dis">Offers clinical expertise, empathy, and the human touch</p>-->
-	<!--			    </div>-->
-	<!--			    <div class="man-human-inner-cont">-->
-	<!--			        <div class="background-grid-color"></div>-->
-	<!--			        <h3 class="manhuman-heading">AI Care Specialist</h3>-->
-	<!--			        <p class="manhuman-dis">Provides accessibility, scalability, and hyper‑personalization</p>-->
-	<!--			    </div>-->
-	<!--			</div>-->
-	<!--	   </div>-->
-	<!--</section>-->
-	
-	<!--<section class="man-video-section">-->
-	<!--    <div class="wrapper">-->
-	<!--            <div class="man-video0sec-con">-->
-        	             <!-- Video Start -->
- <!--                       <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="palyvideo">-->
- <!--                       <source src="https://server1.xploreseo.com/gritlife/assests/loki-promo-website-preview.mp4" type="video/mp4" />-->
- <!--                     </video>-->
-                  <!-- Video End -->
- <!--                       <div class="content-video-up">-->
- <!--                         <div class="manheading-video-nw">-->
- <!--                             <h3>Meet Phoenix — the future of personalized care.</h3>-->
- <!--                         </div>-->
- <!--                         <div class="button-section-video">-->
- <!--                             <a href="#" class="btn-videonw">-->
- <!--                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20">-->
- <!--                                <path fill-rule="evenodd" d="M2.6 2.833a.7.7 0 0 1 1.03-.617L17.982 9.87a.7.7 0 0 1-.033 1.252L3.596 17.82a.7.7 0 0 1-.996-.634z" clip-rule="evenodd"></path></svg>-->
- <!--                                 Play video-->
- <!--                             </a>-->
-                              
- <!--                         </div>-->
- <!--                     </div>-->
- <!--               </div>-->
- <!--       </div>-->
-	<!--</section>-->
-	
-	<section class="manpople-power-secton">
-	    <div class="wrapper">
-	         <div class="heading-power-sec">
-	             <h4>WHY GRITLIFE</h4>
-	             <h2>Rewrite the Rules: Empower Your Life with GritLife</h2>
-	             <p>Get ready for adventure with GritLife. Our NDIS-supported activities push your limits, ignite your spirit, and turn everyday life into an epic journey. Join us and break free from the ordinary-experience the thrill and
-empowerment you deserve.</p>
-	             <a href="https://server1.xploreseo.com/gritlife/experiences.html" class="manbook-demo">Find Your Adventure 
-	             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20" class="chevron">
-	             <path fill-rule="evenodd" d="M6.293 2.293a1 1 0 0 0 0 1.414L12.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0" clip-rule="evenodd"></path></svg>
-	             </a>
-	             
-	         </div>
-	        <!-------testimonials section---------->
-	        <div class="testimonilas-section-flex">
-	            <div class="slider-testmi-column">
-	                
-	               <!-----testminials slider start here----------->
-                	   <div class="testimonial-container">
-                        <div class="testimonial-slider">
-                         
-                            
-                            <div class="testimonial-slide">
-                                <div class="main-testmonils-cont">
-                                     <img src="/gritlife/assests/img1.jpeg" alt="solution-img">
-                                       
-                                    <div class="testimonilscontent-inner">
-                                        <button class="playvideo-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2"></circle><path fill="#fff" d="m21.31 16.13 10.2 7.024a1 1 0 0 1 0 1.647l-10.2 7.024a1 1 0 0 1-1.568-.823V16.954a1 1 0 0 1 1.567-.824"></path></svg>
-                                        </button>
-                                    <div class="testimonial-content">
-                                      <p>"This program has been a game-changer for me. Every adventure has brought joy and excitement back into my life. I feel truly understood and supported."</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                       Jake
-                                    </div>
-                                    <h3 class="mandic-testmonila">Gritlife member</h3>
-                                    </div>
-                                </div>
-                            </div>
-                
-                           <div class="testimonial-slide">
-                                <div class="main-testmonils-cont">
-                                     <img src="/gritlife/assests/kelly_13e7421b41.jpeg" alt="solution-img">
-                                    
-                                    <div class="testimonilscontent-inner content-jess">
-                                        <button class="playvideo-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2"></circle><path fill="#fff" d="m21.31 16.13 10.2 7.024a1 1 0 0 1 0 1.647l-10.2 7.024a1 1 0 0 1-1.568-.823V16.954a1 1 0 0 1 1.567-.824"></path></svg>
-                                        </button>
-                                    <div class="testimonial-content">
-                                      <p>"Since joining GritLife, I've become more active than ever before. The thrilling activities have given me the motivation and confidence to take on
-                                        physical challenges beyond our sessions. I've
-                                        discovered a love for
-                                        staying active and pushing my limits in ways I never imagined."</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        Jess
-                                    </div>
-                                    <h3 class="mandic-testmonila">Gritlife member</h3>
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <div class="testimonial-slide">
-                                <div class="main-testmonils-cont">
-                                    
-                                     <img src="/gritlife/assests/trent_277b0c8ca6.jpeg" alt="solution-img">
-                                    
-                                    <div class="testimonilscontent-inner">
-                                        <button class="playvideo-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2"></circle><path fill="#fff" d="m21.31 16.13 10.2 7.024a1 1 0 0 1 0 1.647l-10.2 7.024a1 1 0 0 1-1.568-.823V16.954a1 1 0 0 1 1.567-.824"></path></svg>
-                                        </button>
-                                    <div class="testimonial-content">
-                                      <p> "I couldn't keep GritLife to myself! The adventures
-have been an absolute blast and deeply enriching. Everyone needs to experience this!"</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        Ethan
-                                    </div>
-                                    <h3 class="mandic-testmonila">Gritlife member</h3>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="testimonial-slide">
-                                <div class="main-testmonils-cont">
-                                     <img src="/gritlife/assests/img1.jpeg" alt="solution-img">
-                                    
-                                    <div class="testimonilscontent-inner">
-                                        <button class="playvideo-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="23" stroke="#fff" stroke-width="2"></circle><path fill="#fff" d="m21.31 16.13 10.2 7.024a1 1 0 0 1 0 1.647l-10.2 7.024a1 1 0 0 1-1.568-.823V16.954a1 1 0 0 1 1.567-.824"></path></svg>
-                                        </button>
-                                    <div class="testimonial-content">
-                                      <p> “10 weeks into the program my back pain completely dissolved. It’s like complete freedom from something that’s been terrorizing you 24 hours a day.”</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        Marcelo
-                                    </div>
-                                    <h3 class="mandic-testmonila">Sword member</h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                           <!-- Navigation Buttons -->
-                        <div class="testimonial-navigation">
-                            <button class="prev" onclick="moveSlide(-1)"><img src="/gritlife/assests/arrow.svg"></button>
-                            <button class="next" onclick="moveSlide(1)"> <img src="/gritlife/assests/arrow.svg"></button>
-                        </div>
-                    </div>
-	               
-	               <!------testmonils slider end here---------------->
-	               
-	            </div>
-	            
-	            <div class="number-cont-column">
-	                <ul class="manlistcont">
-	                   <li> <h2 class="column-number">74<sub class="count-present">%</sub></h2>
-	                <h4 class="cont-column-testimn">Of members say they would recommend to a friend</h4></li>
-	                <li> <h2 class="column-number">9.5<sub class="count-present">/10</sub></h2>
-	                <h4 class="cont-column-testimn">Client Satisfaction Rate</h4></li>
-	                <li> <h2 class="column-number">80<sub class="count-present">%</sub></h2>
-	                <h4 class="cont-column-testimn">Increase in Physical Activity Levels</h4></li>
-	               </ul>
-	 
-	            </div>
-	        </div>
-	    </div>
-    
-	</section>
-	
-	
-    
-	<section class="platform-section">
-	     <div class="platform-section">
-        <div class="wrapper">
-            <div class="platform-upper-section">
-                <p class="sub-heading">Our Platform</p>
-                <h3 class="heading">Your Path to Excitement: A Quick Guide</h3>
-            </div>
-            <div class="tab-container">
-                <div class="tab-buttons">
-                    <button class="tab-link active btn-start" onclick="openTab(event, 'tab1')">Give us the Scoop, Then its all action!</button>
-                    <button class="tab-link" onclick="openTab(event, 'tab2')">Build your day</button>
-                    <button class="tab-link" onclick="openTab(event, 'tab3')">Adventure Info in Your Inbox </button>
-                    <button class="tab-link btn-end" onclick="openTab(event, 'tab4')">Your Ultimate Adventure Companion</button>
-                </div>
-            
-                <div id="tab1" class="tab-content active">
-                    <div class="tab-details">
-                        <div class="tab-img">
-                            <img src="assests/tab1-image.png" alt="Clinical Rigor">
-                            <div class="back-newimg1yello"></div>
-                            <div class="back-newimg1blue"></div>
-                        </div>
-                        <div class="tab-detail">
-                            <h3>Give us the Scoop, Then its all action!</h3>
-                            <p>Start your epic journey by giving us the lowdown. A quick form is all it takes: drop in some personal 
-                            info and the specifics of your NDIS plan. We craft these details into a custom profile that hits the mark,
-                            making sure your adventures are tailor- made for thrill-seekers like you. Just a few clicks stand between you and the rush of your next big adventure!</p>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div id="tab2" class="tab-content">
-                    <div class="tab-details">
-                        <div class="tab-img">
-                            <img src="assests/tabtwoimg.png" alt="Powerful technology">
-                        </div>
-                        <div class="tab-detail">
-                            <h3>Build your day</h3>
-                            <p>Craft Your Perfect Day! Dive into our diverse pool of main and supplementary activities to
-                            assemble your ideal session. Pick and mix your favourites to shape an experience that's as unique as you are.
-                            Every choice you make adds a piece to your adventure puzzle, setting the stage for a day you won't forget. </p>
-                            <span class="tab-report">Find Your Adventure<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20" class="chevron"><path fill-rule="evenodd" d="M6.293 2.293a1 1 0 0 0 0 1.414L12.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0" clip-rule="evenodd"></path></svg></span>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab3" class="tab-content">
-                    <div class="tab-details">
-                        <div class="tab-img">
-                            <img src="assests/memberfirstimg1.png" alt="Member-first-approach">
-                       
-                        </div>
-                        <div class="tab-detail">
-                            <h3>Adventure Info in Your Inbox</h3>
-                            <p>After building your perfect day by selecting your activities, you'll receive an email with all the logistics and important details.
-                            This includes your custom itinerary, activity times, locations, and any additional info you'll need for a smooth and fun- filled day.</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="tab4" class="tab-content">
-                    <div class="tab-details">
-                        <div class="tab-img">
-                            <img src="assests/tab4-image.png" alt="Industry-leading">
-                        </div>
-                        <div class="tab-detail">
-                            <h3>Your Ultimate Adventure Companion</h3>
-                            <p>After building your perfect day by selecting your activities, you'll receive an email with all the
-logistics and important details. This includes your custom itinerary, activity times, locations, and any additional info you'll need for a smooth and fun- filled day.</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-	    
-	</section>
-	
-	
-	    <section class="learm-more-cont">
+</header>
+
+<div id="homepage">
+    <div class="video-section-new-top">
+        <video playsinline autoplay muted loop class="video-herosec">
+            <source src="assets/Website_Header_Video_H264_1080p_4Mbps_DESKTOP.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="hero-section-content">
         <div class="wrapper">
-            <div class="want-to-learn-more">
-                <h3>Want to learn more?</h3>
-                <div class="cards">
-                    <div class="learn-card">
-                        <h6>About Us</h6>
-                        <p>Discover what makes GritLife unique and how we're changing the game in NDIS support.</p>
-                       <a href="https://server1.xploreseo.com/gritlife/about.html"><span class="learn-more">Know more<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20" class="chevron"><path fill-rule="evenodd" d="M6.293 2.293a1 1 0 0 0 0 1.414L12.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0" clip-rule="evenodd"></path></svg></span></a>
-                    </div>
-                    <div class="learn-card">
-                        <h6>Our Experiences </h6>
-                        <p>Dive into the range of thrilling experiences designed to push limits and foster growth</p>
-                      <a href="https://server1.xploreseo.com/gritlife/experiences.html"><span class="learn-more">Know more<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20" class="chevron"><path fill-rule="evenodd" d="M6.293 2.293a1 1 0 0 0 0 1.414L12.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0" clip-rule="evenodd"></path></svg></span></a>
-                    </div>
-                    <div class="learn-card">
-                        <h6>Join The Team</h6>
-                        <p>Learn about the benefits of becoming a GritLife Carer and how you can make a difference</p>
-                      <a href="https://server1.xploreseo.com/gritlife/carers.html"><span class="learn-more">Know more<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20" class="chevron"><path fill-rule="evenodd" d="M6.293 2.293a1 1 0 0 0 0 1.414L12.586 10l-6.293 6.293a1 1 0 1 0 1.414 1.414l7-7a1 1 0 0 0 0-1.414l-7-7a1 1 0 0 0-1.414 0" clip-rule="evenodd"></path></svg></span></a>
-                    </div>
-                </div>
+            <div class="content">
+                <h3>Break Free from the Ordinary Life</h3>
+                <span><a href="build_your_day.html">Join the fun</a></span>
             </div>
         </div>
-        <div class="back-yello-color"></div>
-         <div class="back-blue-color"></div>
-          <div class="back-white-color"></div>
-    </section>
-	
-	
-	<section class="member-impact-section">
-        <div class="wrapper">
-            <div class="member-impact">
-                <p class="sub-heading">WHO WE ARE: ADVENTURERS AT HEART</p>
-                <h2 class="heading">Transforming Lives Through <br>Adventure</h2>
-                <p class="impact-intro">At GritLife, we're transforming the way people experience support by combining 
-                excitement with personalised care. Founded by thrill-seekers, for thrill-seekers, we infuse every interaction with opportunities for growth and exhilaration. 
-                Our mission is to empower individuals to safely explore their limits and discover new strengths with enthusiasm.</p>
-                <div class="impact-cards">
-                    <div class="quotes-card">
-                        <div class="logicalis-logo">
-                            <img src="assests/Logicalis_Logo.png" alt="logicalis-logo">
-                        </div>
-                        <div class="quote-container">  
-                            <svg xmlns="http://www.w3.org/2000/svg" width="27" height="20" fill="#5993EA" viewBox="0 0 27 20"><path d="M21.535 20q-2.855 0-4.731-1.84-1.795-1.84-1.795-5.28 0-3.68 2.12-7.28Q19.334 2 23.249 0l1.876 2.8q-4.242 2.88-5.057 7.28.734-.32 1.712-.32 2.285 0 3.753 1.44T27 14.88q0 2.24-1.55 3.68T21.535 20m-15.01 0q-2.855 0-4.73-1.84Q0 16.32 0 12.88 0 9.2 2.12 5.6 4.325 2 8.24 0l1.876 2.8q-4.242 2.88-5.058 7.28.734-.32 1.713-.32 2.285 0 3.753 1.44t1.468 3.68-1.55 3.68T6.526 20"></path></svg>
-                            <div class="quote">
-                                Support becomes a springboard to adventure —an electrifying path to self-discovery. We push limits, spark excitement, and create a space where you can truly test your potential with confidence.
-                            </div>
-                            <h6 class="author">
-                                Louie
-                            </h6>
-                            <span class="designation">Founder & CEO</span>
-                        </div>
-                    </div>
-                    <div class="side-cards">
-                       <div class="side-card">  
-                        <div class="side-detail">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="#5993EA" stroke="#5993EA" viewBox="0 0 19 22"><path fill-rule="evenodd" d="M9.5 1c.321 0 .588.236.643.547l.01.12v17.056l6.73-6.861c.256-.26.67-.26.925 0 .227.231.253.59.076.85l-.076.093-7.846 8-.054.05-.081.056-.123.056-.088.023L9.5 21l-.07-.004-.096-.018-.106-.038-.1-.059-.09-.076-7.846-8a.676.676 0 0 1 0-.943.645.645 0 0 1 .834-.077l.09.077 6.73 6.862V1.667A.66.66 0 0 1 9.5 1Z" clip-rule="evenodd"></path></svg>&nbsp;<strong>Founded by Passion</strong>
-                        <p>
-                            Launched in 2024 by a group of like-minded thrill-seekers who saw
-a need for more engaging, empowering activities for individuals within the NDIS framework
-                        </p></div>
-                       </div>
-                       <div class="side-card">
-                        <div class="side-detail"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="#5993EA" stroke="#5993EA" viewBox="0 0 19 22"><path fill-rule="evenodd" d="M9.5 1c.321 0 .588.236.643.547l.01.12v17.056l6.73-6.861c.256-.26.67-.26.925 0 .227.231.253.59.076.85l-.076.093-7.846 8-.054.05-.081.056-.123.056-.088.023L9.5 21l-.07-.004-.096-.018-.106-.038-.1-.059-.09-.076-7.846-8a.676.676 0 0 1 0-.943.645.645 0 0 1 .834-.077l.09.077 6.73 6.862V1.667A.66.66 0 0 1 9.5 1Z" clip-rule="evenodd"></path></svg><strong>Mission- Driven
-</strong>
-                        <p>
-                            Our mission is to ignite a sense of adventure and personal growth in safe, structured
-environments that challenge and inspire <sup></sup>
-                        </p></div>
-                       </div>
-                       <div class="side-card">
-                        <div class="side-detail increase">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="#5993EA"
-                            stroke="#5993EA" viewBox="0 0 19 22" class="sc-41be5b1f-4 jhUJpt"><path fill-rule="evenodd"
-                            d="M9.5 1c.321 0 .588.236.643.547l.01.12v17.056l6.73-6.861c.256-.26.67-.26.925 0 
-                            .227.231.253.59.076.85l-.076.093-7.846 8-.054.05-.081.056-.123.056-.088.023L9.5 21l-.07-.004-.096-.018-.106-.038-.1-.059-.09-.076-7.846-8a.676.676 0 0 1 0-.943.645.645 0 0 1 
-                            .834-.077l.09.077 6.73 6.862V1.667A.66.66 0 0 1 9.5 1Z" clip-rule="evenodd"></path></svg>&nbsp;
-                            <strong>Commitment to Safety
-</strong>
-                        <p>
-                           Every activity is meticulously planned with safety as a priority, ensuring our clients can explore their limits with peace of mind<sup></sup>
-                        </p></div>
-                       </div>
-                       <div class="side-card">
-                        <div class="side-detail"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="22" fill="#5993EA" stroke="#5993EA" viewBox="0 0 19 22"><path fill-rule="evenodd" d="M9.5 1c.321 0 .588.236.643.547l.01.12v17.056l6.73-6.861c.256-.26.67-.26.925 0 .227.231.253.59.076.85l-.076.093-7.846 8-.054.05-.081.056-.123.056-.088.023L9.5 21l-.07-.004-.096-.018-.106-.038-.1-.059-.09-.076-7.846-8a.676.676 0 0 1 0-.943.645.645 0 0 1 .834-.077l.09.077 6.73 6.862V1.667A.66.66 0 0 1 9.5 1Z" clip-rule="evenodd"></path></svg>&nbsp;Innovation in Support<strong></strong>
-                        <p>
-                          Combining
-excitement with personalised care, we're redefining support services through innovative,
-adventure-based
-programs<sup></sup>
-                        </p></div>
-                       </div>
-                    </div>
+    </div>
+</div>
+
+<section class="solutions-section">
+    <div class="wrapper">
+        <div class="solution-sect">
+            <div class="solution-container">
+                <div class="solution-details">
+                    <p class="solution-title">Our Solutions</p>
+                    <h3 class="solution-heading">Meet GritLife</h3>
+                    <p class="solutions">Break the Mould with GritLife: Leading the NDIS Industry with Engaging, Edge-of-Your-Seat Experiences</p>
+                </div>
+                <div class="solution-img">
+                    <img src="assets/image111.png" alt="Our Solutions">
                 </div>
             </div>
+            <!-- Additional solution containers go here -->
         </div>
-    </section>
+    </div>
+</section>
 
+<!-- Footer Section -->
+<div id="footer-placeholder"></div>
 
-	
-	
-        	
-        <section class="manour-member-section">
-             <div class="wrapper">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-                     
-                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-                    <div class="member-slider-top-heading">
-                        <h2>Loved by our members</h2>
-                        <p>We've helped countless people embrace adventure, push limits, and unlock their potential with confidence.</p>
-                        
-                    </div>
-                    <section class="new_slidder">
-                        <div>
-                            <div class="main-member-sec">
-                            <img draggable="true" src="/gritlife/assests/lemmy_fe3823ab26.jpeg" alt="Product-specific campaign">
-                            <div class="mannew-section-cont-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
-                                <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
-                                .041-.849A.5.5 0 0 0 7.758 4c-.388.12-1.808.608-3.14 1.678C3.279 6.755 2 8.448 2 10.95c0 2.207 1.503 4 3.5 4H6a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061"></path></svg>
-                                <p>You have the power to get out of [pain]. It's a very isolating feeling, and this journey has let me be so much more present. I'm excited I get to do this with my kids.</p>
-                                <h3 class="manauther-name-new">Kelly</h3>
-                            </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="main-member-sec">
-                            <img draggable="true" src="/gritlife/assests/trent_d6c255edc6.jpeg" alt="Product-specific campaign">
-                            <div class="mannew-section-cont-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
-                                <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
-                                .041-.849A.5.5 0 0 0 7.758 4c-.388.12-1.808.608-3.14 1.678C3.279 6.755 2 8.448 2 10.95c0 2.207 1.503 4 3.5 4H6a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061"></path></svg>
-                                <p>I really do think that movement is medicine. Sword was instrumental for my knee pain. Had it not been for that, I might not have made it.</p>
-                                <h3 class="manauther-name-new">Trent</h3>
-                            </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="main-member-sec">
-                            <img draggable="true" src="/gritlife/assests/img_7_1_d7377d9fdb.png" alt="Product-specific campaign">
-                            <div class="mannew-section-cont-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
-                                <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
-                                .041-.849A.5.5 0 0 0 7.758 4c-.388.12-1.808.608-3.14 1.678C3.279 6.755 2 8.448 2 10.95c0 2.207 1.503 4 3.5 4H6a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061"></path></svg>
-                                <p>[Sword] helped me stay away from obesity...and it helped me find my path as a father so my kids have a good role model. Being able to move is a blessing.</p>
-                                <h3 class="manauther-name-new">Marcelo</h3>
-                            </div>
-                            </div>
-                        </div>
-                         <div>
-                            <div class="main-member-sec">
-                            <img draggable="true" src="/gritlife/assests/iommi_14fc08a271.jpeg" alt="Product-specific campaign">
-                            <div class="mannew-section-cont-flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
-                                <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
-                                .041-.849A.5.5 0 0 0 7.758 4c-.388.12-1.808.608-3.14 1.678C3.279 6.755 2 8.448 2 10.95c0 2.207 1.503 4 3.5 4H6a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061"></path></svg>
-                                <p>This product has freed me from so much pain and has literally given me my freedom of movement back.</p>
-                                <h3 class="manauther-name-new">Cynthia K</h3>
-                            </div>
-                            </div>
-                        </div>
-                    </section>
-        
-                        <script>
-                            $(document).ready(function(){
-                                $('.new_slidder').slick({
-                                    centerMode: true,
-                                    centerPadding: '0px',
-                                    slidesToShow: 3,
-                                  
-                                    autoplay: false,
-                                    prevArrow: '<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20"><path d="M19 9.857a1 1 0 0 1-1 1H4.414l5.15 5.15a1 1 0 1 1-1.414 1.414l-6.843-6.843a.997.997 0 0 1 .005-1.447L8.15 2.293a1 1 0 0 1 1.415 1.414l-5.15 5.15H18a1 1 0 0 1 1 1"></path></svg></button>',
-                                    nextArrow: '<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.436 2.293a1 1 0 0 1 1.414 0l6.857 6.857a.997.997 0 0 1 0 1.415l-6.857 6.857a1 1 0 0 1-1.414-1.415l5.15-5.15H2a1 1 0 1 1 0-2h13.586l-5.15-5.15a1 1 0 0 1 0-1.414" clip-rule="evenodd"></path></svg></button>',
-                                    responsive: [
-                                        {
-                                            breakpoint: 980,
-                                            settings: {
-                                                arrows: true,
-                                                centerMode: true,
-                                                centerPadding: '40px',
-                                                slidesToShow: 3,
-                                            }
-                                        },
-                                        {
-                                            breakpoint: 767,
-                                            settings: {
-                                                arrows: true,
-                                                centerMode: true,
-                                                centerPadding: '40px',
-                                                slidesToShow: 1,
-                                            }
-                                        }
- 
-                                    ]
-                                });
-                            });
-                        </script>
-                    </div>
-            </section>	
-            
-        	
-	       <div id="footer-placeholder"></div>
-
-    <script>
-        // Function to load HTML content from external files
-        const loadFile = (id, url) => {
-            fetch(url)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status}`);
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    document.getElementById(id).innerHTML = data;
-                })
-                .catch(error => {
-                    console.error(`Error loading ${url}:`, error);
-                });
-        };
-
-        // Load header and footer files on DOMContentLoaded
-        document.addEventListener("DOMContentLoaded", function() {
-            loadFile("header-placeholder", "https://server1.xploreseo.com/gritlife/header.html");
-            loadFile("footer-placeholder", "https://server1.xploreseo.com/gritlife/footer.html");
-        });
-    </script>
-
-    <script src="js/script.js"></script>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.testimonial-slide');
-        const totalSlides = slides.length;
-
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            const slider = document.querySelector('.testimonial-slider');
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    </script>
-    
-<!----tab js--->
 <script>
-// Tab Functionality
-function openTab(evt, tabName) {
-  // Get all elements with class="tab-content" and hide them
-  let tabContent = document.getElementsByClassName("tab-content");
-  for (let i = 0; i < tabContent.length; i++) {
-    tabContent[i].style.display = "none";
-    tabContent[i].classList.remove("active");
-  }
+    // Function to load HTML content from external files
+    const loadFile = (id, url) => {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            })
+            .catch(error => {
+                console.error(`Error loading ${url}:`, error);
+            });
+    };
 
-  // Get all elements with class="tab-link" and remove the class "active"
-  let tabLinks = document.getElementsByClassName("tab-link");
-  for (let i = 0; i < tabLinks.length; i++) {
-    tabLinks[i].classList.remove("active");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(tabName).style.display = "block";
-  document.getElementById(tabName).classList.add("active");
-  evt.currentTarget.classList.add("active");
-}
-
-// Initialize first tab as visible
-document.addEventListener("DOMContentLoaded", (event) => {
-  document.getElementById("tab1").style.display = "block";
-});
-
+    // Load header and footer files on DOMContentLoaded
+    document.addEventListener("DOMContentLoaded", function() {
+        loadFile("footer-placeholder", "footer.html");
+    });
 </script>
- 
-   </div> 
-  </body>
+<script src="js/script.js"></script>
+</body>
 </html>
