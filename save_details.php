@@ -33,12 +33,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Send email
         if (mail($to, $subject, $message, $headers)) {
-            echo "<script>alert('Data saved successfully!'); window.location.href = 'https://server1.xploreseo.com/gritlife/contact.php';</script>";
+            echo "<script>alert('Data saved successfully!'); window.location.href = 'contact.php';</script>";
         } else {
-            echo "<script>alert('Data saved but email could not be sent.'); window.location.href = 'https://server1.xploreseo.com/gritlife/contact.php';</script>";
+            echo "<script>alert('Data saved but email could not be sent.'); window.location.href = 'contact.php';</script>";
         }
     } else {
-        echo "<script>alert('Error saving data: " . $conn->error . "'); window.location.href = 'https://server1.xploreseo.com/gritlife/contact.php';</script>";
+        echo "<script>alert('Error saving data: " . $conn->error . "'); window.location.href = 'contact.php';</script>";
     }
 }
 
