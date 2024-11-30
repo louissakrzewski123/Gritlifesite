@@ -1626,18 +1626,6 @@ h1.man-headingexprience {
             nextButton.addEventListener('click', nextSlide);
             prevButton.addEventListener('click', prevSlide);
     
-            // Auto play
-            let autoPlayInterval = setInterval(() => {
-                nextSlide();
-            }, 3000); // Change slides every 3 seconds
-    
-            // Stop autoplay on hover
-            slider.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
-            slider.addEventListener('mouseleave', () => {
-                autoPlayInterval = setInterval(() => {
-                    nextSlide();
-                }, 3000);
-            });
     
             // Set initial slide width based on screen size
             setSlidesToShow();
