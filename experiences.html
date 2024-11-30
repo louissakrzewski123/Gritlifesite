@@ -1571,7 +1571,7 @@ h1.man-headingexprience {
     window.onload = function () {
     // Slider experience2 script start here
     let currentIndex = 0;
-    let slidesToShow = 3; // Change default to 3 for desktop
+    let slidesToShow = 3; // We want to show only 3 slides
     const slides = document.querySelectorAll('.expience-innerslide2');
     const totalSlides = slides.length;
 
@@ -1593,17 +1593,18 @@ h1.man-headingexprience {
         } else if (windowWidth <= 768) {
             slidesToShow = 2; // Tablet view
         } else {
-            slidesToShow = 3; // Desktop view
+            slidesToShow = 3; // Desktop view - set to 3 slides
         }
 
-        // Set the width of each slide to 25% to keep the original size
+        // Set the width of each slide dynamically to maintain the original size
         slides.forEach((slide) => {
-            slide.style.minWidth = `25%`; // Keep the original size that accommodates 4 slides
+            slide.style.minWidth = `33.33%`; // To ensure that only 3 slides are visible while retaining their original size
         });
     }
 
     function showSlide(index) {
-        if (index >= totalSlides - slidesToShow) {
+        // Prevent going beyond the available slides
+        if (index >= totalSlides - slidesToShow + 1) {
             currentIndex = totalSlides - slidesToShow;
         } else if (index < 0) {
             currentIndex = 0;
@@ -1611,7 +1612,8 @@ h1.man-headingexprience {
             currentIndex = index;
         }
 
-        const offset = -(currentIndex * 25); // 25% width per slide
+        // Move slider to the appropriate position
+        const offset = -(currentIndex * (100 / slidesToShow));
         slider.style.transform = `translateX(${offset}%)`;
     }
 
@@ -1635,6 +1637,7 @@ h1.man-headingexprience {
         showSlide(currentIndex); // Maintain current slide position
     });
 };
+
         //slider experience2 script end here
     </script>
     
