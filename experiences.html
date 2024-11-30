@@ -1593,12 +1593,12 @@ h1.man-headingexprience {
         } else if (windowWidth <= 768) {
             slidesToShow = 2; // Tablet view
         } else {
-            slidesToShow = 3; // Desktop view - Set to 3
+            slidesToShow = 3; // Desktop view
         }
 
-        // Set the width of each slide dynamically based on slidesToShow
+        // Set the width of each slide to 25% to keep the original size
         slides.forEach((slide) => {
-            slide.style.minWidth = `${100 / slidesToShow}%`;
+            slide.style.minWidth = `25%`; // Keep the original size that accommodates 4 slides
         });
     }
 
@@ -1611,7 +1611,7 @@ h1.man-headingexprience {
             currentIndex = index;
         }
 
-        const offset = -(currentIndex * (100 / slidesToShow));
+        const offset = -(currentIndex * 25); // 25% width per slide
         slider.style.transform = `translateX(${offset}%)`;
     }
 
