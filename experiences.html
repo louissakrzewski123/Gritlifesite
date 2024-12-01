@@ -1568,76 +1568,74 @@ h1.man-headingexprience {
     </section>
     
     <script>
-    window.onload = function () {
-    // Slider experience2 script start here
-    let currentIndex = 0;
-    let slidesToShow = 3; // We want to show only 3 slides
-    const slides = document.querySelectorAll('.expience-innerslide2');
-    const totalSlides = slides.length;
-
-    const slider = document.querySelector('.exprience-slider2');
-    const prevButton = document.getElementById('prevBtn2');
-    const nextButton = document.getElementById('nextBtn2');
-
-    // Ensure the slider and buttons exist
-    if (!slider || !prevButton || !nextButton || totalSlides === 0) {
-        console.error('Slider elements or buttons not found.');
-        return;
-    }
-
-    function setSlidesToShow() {
-        const windowWidth = window.innerWidth;
-
-        if (windowWidth <= 480) {
-            slidesToShow = 1; // Mobile view
-        } else if (windowWidth <= 768) {
-            slidesToShow = 2; // Tablet view
-        } else {
-            slidesToShow = 3; // Desktop view - set to 3 slides
-        }
-
-        // Set the width of each slide dynamically to maintain the original size
-        slides.forEach((slide) => {
-            slide.style.minWidth = `33.33%`; // To ensure that only 3 slides are visible while retaining their original size
-        });
-    }
-
-    function showSlide(index) {
-        // Prevent going beyond the available slides
-        if (index >= totalSlides - slidesToShow + 1) {
-            currentIndex = totalSlides - slidesToShow;
-        } else if (index < 0) {
-            currentIndex = 0;
-        } else {
-            currentIndex = index;
-        }
-
-        // Move slider to the appropriate position
-        const offset = -(currentIndex * (100 / slidesToShow));
-        slider.style.transform = `translateX(${offset}%)`;
-    }
-
-    function nextSlide() {
-        showSlide(currentIndex + 1);
-    }
-
-    function prevSlide() {
-        showSlide(currentIndex - 1);
-    }
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-
-    // Set initial slide width based on screen size
-    setSlidesToShow();
-
-    // Handle window resize to reset slide width and position
-    window.addEventListener('resize', () => {
-        setSlidesToShow(); // Adjust slide widths on window resize
-        showSlide(currentIndex); // Maintain current slide position
-    });
-};
-
+        window.onload = function () {
+            //slider experience2 script start here
+            let currentIndex = 0;
+            let slidesToShow = 4; // Default for desktop
+            const slides = document.querySelectorAll('.expience-innerslide2');
+            const totalSlides = slides.length;
+    
+            const slider = document.querySelector('.exprience-slider2');
+            const prevButton = document.getElementById('prevBtn2');
+            const nextButton = document.getElementById('nextBtn2');
+    
+            // Ensure the slider and buttons exist
+            if (!slider || !prevButton || !nextButton || totalSlides === 0) {
+                console.error('Slider elements or buttons not found.');
+                return;
+            }
+    
+            function setSlidesToShow() {
+                const windowWidth = window.innerWidth;
+    
+                if (windowWidth <= 480) {
+                    slidesToShow = 1; // Mobile view
+                } else if (windowWidth <= 768) {
+                    slidesToShow = 3; // Tablet view
+                } else {
+                    slidesToShow = 4; // Desktop view
+                }
+    
+                // Set the width of each slide dynamically based on slidesToShow
+                slides.forEach((slide) => {
+                    slide.style.minWidth = `${100 / slidesToShow}%`;
+                });
+            }
+    
+            function showSlide(index) {
+                if (index >= totalSlides - slidesToShow) {
+                    currentIndex = totalSlides - slidesToShow;
+                } else if (index < 0) {
+                    currentIndex = 0;
+                } else {
+                    currentIndex = index;
+                }
+    
+                const offset = -(currentIndex * (100 / slidesToShow));
+                slider.style.transform = `translateX(${offset}%)`;
+            }
+    
+            function nextSlide() {
+                showSlide(currentIndex + 1);
+            }
+    
+            function prevSlide() {
+                showSlide(currentIndex - 1);
+            }
+    
+            nextButton.addEventListener('click', nextSlide);
+            prevButton.addEventListener('click', prevSlide);
+    
+    
+            // Set initial slide width based on screen size
+            setSlidesToShow();
+    
+            // Handle window resize to reset slide width and position
+            window.addEventListener('resize', () => {
+                setSlidesToShow(); // Adjust slide widths on window resize
+                showSlide(currentIndex); // Maintain current slide position
+            });
+        };
         //slider experience2 script end here
     </script>
     
