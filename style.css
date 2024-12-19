@@ -2380,7 +2380,13 @@ ul.nav-items {
 }
 }
 
+.content img {
+    width: 81px !important;
+    position: absolute;
+    bottom: 0px;
+    right: 27px;
+}
 
-
-
-
+video.video-herosec {
+    position: relative;
+}

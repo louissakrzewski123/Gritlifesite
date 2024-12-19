@@ -127,6 +127,33 @@ $(document).ready(function(){
     });
 </script>
 
+<style>
+.content img {
+    width: 60px !important;
+    position: absolute;
+    bottom: 0px;
+    right: 27px;
+    border-radius: 48px;
+}
+
+video.video-herosec {
+    position: relative;
+}
+@media only screen and (max-width:767px) and (min-width:0px){
+    .content img {
+    bottom: -58px !Important;
+
+}
+}
+
+@media only screen and (max-width:1024px) and (min-width:768px){
+    .content img {
+    bottom: 80px !important;
+
+}
+}
+</style>
+
 </head>
 
 <body>
@@ -150,6 +177,7 @@ $(document).ready(function(){
                     <li class="link"><a href="experiences.html"> Experiences </a></li>
                     <li class="link"><a href="terms-of-conditions.html"> Terms and Conditions </a></li>
                     <li class="link"><a href="privacy-policy.html"> Privacy Policy </a></li>
+                     <li class="link"><a href="faq.html"> FAQ </a></li>
                     <!--<li class="link"><a href="#">Company &nbsp;<i class="bi bi-chevron-down"></i></a></li>-->
                 </ul>
             </div>
@@ -165,6 +193,7 @@ $(document).ready(function(){
                     <li class="link"><a href="about.html">About Us</a></li>
                     <li class="link"><a href="carers.html">Our Carers </a></li>
                     <li class="link"><a href="experiences.html">Experiences </a></li>
+                     <li class="link"><a href="faq.html">Faq</a></li>
                 </ul>
             </div>
            <!-- Header End -->
@@ -178,7 +207,7 @@ $(document).ready(function(){
             <!-- Video Start -->
             <div class="video-section-new-top">
             <video playsinline="playsinline" autoplay="autoplay"  muted="muted" loop="loop" class="video-herosec">
-            <source src="assests/Website_Header_Video_H264_1080p_4Mbps_DESKTOP.mp4" type="video/mp4" />
+            <source src="assests/homepgae_hero_sec.mp4" type="video/mp4" />
           </video>
           <!-- Video End -->
         </div> 
@@ -190,6 +219,7 @@ $(document).ready(function(){
                     Break Free from the Ordinary Life
                 </h3>
                 <span><a href="build_your_day.html">Join the fun</a></span>
+                <img src="assests/logo ndis.png">
                </div>
             </div>
         </div>
@@ -292,7 +322,7 @@ $(document).ready(function(){
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/image111.png" alt="solution">
+                    <img src="assests/Meet_gritlife.png" alt="solution">
                 </div>
                </div>
                <div class="solution-container">
@@ -306,7 +336,7 @@ transformative experiences. Empower yourself to achieve new heights with our dyn
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/thrive-img.png" alt="solution">
+                    <img src="assests/Push-limits_-Grow-stronger.png" alt="solution">
                 </div>
                </div>
                <div class="solution-container">
@@ -320,7 +350,7 @@ companions who are ready to dive into every challenge with you, ensuring every s
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/three-newimg.png" alt="solution">
+                    <img src="assests/Perfect match for every adventure.jpg" alt="solution">
                 </div>
                </div>
                <div class="solution-container">
@@ -335,7 +365,7 @@ companions who are ready to dive into every challenge with you, ensuring every s
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/imagenew1.png" alt="solution">
+                    <img src="assests/shape every moment.jpg" alt="solution">
                 </div>
                </div>
                <div class="solution-container">
@@ -352,7 +382,7 @@ companions who are ready to dive into every challenge with you, ensuring every s
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/predectimage1.png" alt="solution">
+                    <img src="assests/conquer the confusion.jpg" alt="solution">
                 </div>
                </div>
                <div class="solution-container">
@@ -367,7 +397,7 @@ and the safety is top-notch.
                     </p>
                 </div>
                 <div class="solution-img">
-                    <img src="assests/oncall-img.png" alt="solution">
+                    <img src="assests/excitement Meets Security.jpg" alt="solution">
                 </div>
                </div>
                <!--<div class="solution-container">-->
@@ -508,7 +538,7 @@ empowerment you deserve.</p>
                             
                             <div class="testimonial-slide">
                                 <div class="main-testmonils-cont">
-                                     <img src="assests/img1.jpeg" alt="solution-img">
+                                     <img src="assests/jake.jpg" alt="solution-img">
                                        
                                     <div class="testimonilscontent-inner">
                                         <button class="playvideo-btn">
@@ -527,7 +557,7 @@ empowerment you deserve.</p>
                 
                            <div class="testimonial-slide">
                                 <div class="main-testmonils-cont">
-                                     <img src="assests/kelly_13e7421b41.jpeg" alt="solution-img">
+                                     <img src="assests/Jess.jpg" alt="solution-img">
                                     
                                     <div class="testimonilscontent-inner content-jess">
                                         <button class="playvideo-btn">
@@ -550,7 +580,7 @@ empowerment you deserve.</p>
                             <div class="testimonial-slide">
                                 <div class="main-testmonils-cont">
                                     
-                                     <img src="assests/trent_277b0c8ca6.jpeg" alt="solution-img">
+                                     <img src="assests/Ethan.jpg" alt="solution-img">
                                     
                                     <div class="testimonilscontent-inner">
                                         <button class="playvideo-btn">
@@ -628,14 +658,14 @@ have been an absolute blast and deeply enriching. Everyone needs to experience t
                 <div class="tab-buttons">
                     <button class="tab-link active btn-start" onclick="openTab(event, 'tab1')">Give us the Scoop, Then its all action!</button>
                     <button class="tab-link" onclick="openTab(event, 'tab2')">Build your day</button>
-                    <button class="tab-link" onclick="openTab(event, 'tab3')">Adventure Info in Your Inbox </button>
+                    <!--<button class="tab-link" onclick="openTab(event, 'tab3')">Adventure Info in Your Inbox </button>-->
                     <button class="tab-link btn-end" onclick="openTab(event, 'tab4')">Your Ultimate Adventure Companion</button>
                 </div>
             
                 <div id="tab1" class="tab-content active">
                     <div class="tab-details">
                         <div class="tab-img">
-                            <img src="assests/tab1-image.png" alt="Clinical Rigor">
+                            <img src="assests/give us the scoop then its all action.jpg" alt="Clinical Rigor">
                             <div class="back-newimg1yello"></div>
                             <div class="back-newimg1blue"></div>
                         </div>
@@ -651,7 +681,7 @@ have been an absolute blast and deeply enriching. Everyone needs to experience t
                 <div id="tab2" class="tab-content">
                     <div class="tab-details">
                         <div class="tab-img">
-                            <img src="assests/tabtwoimg.png" alt="Powerful technology">
+                            <img src="assests/build your day.jpg" alt="Powerful technology">
                         </div>
                         <div class="tab-detail">
                             <h3>Build your day</h3>
@@ -662,27 +692,28 @@ have been an absolute blast and deeply enriching. Everyone needs to experience t
                         </div>
                     </div>
                 </div>
-                <div id="tab3" class="tab-content">
-                    <div class="tab-details">
-                        <div class="tab-img">
-                            <img src="assests/memberfirstimg1.png" alt="Member-first-approach">
+                <!--<div id="tab3" class="tab-content">-->
+                <!--    <div class="tab-details">-->
+                <!--        <div class="tab-img">-->
+                <!--            <img src="assests/memberfirstimg1.png" alt="Member-first-approach">-->
                        
-                        </div>
-                        <div class="tab-detail">
-                            <h3>Adventure Info in Your Inbox</h3>
-                            <p>After building your perfect day by selecting your activities, you'll receive an email with all the logistics and important details.
-                            This includes your custom itinerary, activity times, locations, and any additional info you'll need for a smooth and fun- filled day.</p>
-                        </div>
-                    </div>
-                </div>
+                <!--        </div>-->
+                <!--        <div class="tab-detail">-->
+                <!--            <h3>Adventure Info in Your Inbox</h3>-->
+                <!--            <p>After building your perfect day by selecting your activities, you'll receive an email with all the logistics and important details.-->
+                <!--            This includes your custom itinerary, activity times, locations, and any additional info you'll need for a smooth and fun- filled day.</p>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
                 <div id="tab4" class="tab-content">
                     <div class="tab-details">
                         <div class="tab-img">
-                            <img src="assests/tab4-image.png" alt="Industry-leading">
+                            <img src="assests/ultimate adventure.jpg" alt="Industry-leading">
                         </div>
                         <div class="tab-detail">
                             <h3>Your Ultimate Adventure Companion</h3>
-                            <p>Once you've mapped out your action-packed day, we’ll handpick a sidekick from our pool of enthusiastic carers—someone who’s perfectly suited to your chosen adventure. While we select the best fit based on your preferences and the activity, you always have the option to request a different carer if needed. Our goal is to match you with a companion who shares your adventurous spirit and helps make every moment unforgettable. Get ready to dive into the excitement with your ideal partner by your side!</p>
+                            <p>After building your perfect day by selecting your activities, you'll receive an email with all the
+logistics and important details. This includes your custom itinerary, activity times, locations, and any additional info you'll need for a smooth and fun- filled day.</p>
                         </div>
                     </div>
                 </div>
@@ -806,7 +837,7 @@ programs<sup></sup>
                     <section class="new_slidder">
                         <div>
                             <div class="main-member-sec">
-                            <img draggable="true" src="assests/lemmy_fe3823ab26.jpeg" alt="Product-specific campaign">
+                            <img draggable="true" src="assests/Emma, Adventure Guide.jpg" alt="Product-specific campaign">
                             <div class="mannew-section-cont-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
                                 <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
@@ -818,7 +849,7 @@ programs<sup></sup>
                         </div>
                         <div>
                             <div class="main-member-sec">
-                            <img draggable="true" src="assests/trent_d6c255edc6.jpeg" alt="Product-specific campaign">
+                            <img draggable="true" src="assests/Mark, Father of Alex.jpg" alt="Product-specific campaign">
                             <div class="mannew-section-cont-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
                                 <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 
@@ -830,7 +861,7 @@ programs<sup></sup>
                         </div>
                         <div>
                             <div class="main-member-sec">
-                            <img draggable="true" src="assests/img_7_1_d7377d9fdb.png" alt="Product-specific campaign">
+                            <img draggable="true" src="assests/jake.jpg" alt="Product-specific campaign">
                             <div class="mannew-section-cont-flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentcolor" viewBox="0 0 20 20" aria-hidden="true" class="_quoteIcon_d6277ee">
                                 <path d="M16.672 4.977a.513.513 0 0 0 .041-.849.5.5 0 0 0-.455-.078c-.388.12-1.808.608-3.14 1.678C11.779 6.805 10.5 8.498 10.5 11c0 2.207 1.503 4 3.5 4h.5a3.5 3.5 0 0 0 .518-6.962c.162-2.05 1.377-2.893 1.654-3.061m-8.5-.05a.513.513 0 0 0 

@@ -26,19 +26,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute SQL query
     if ($conn->query($sql) === TRUE) {
         // Prepare email notification
-        $to = "test149053@gmail.com";
+        $to = "test170924@gmail.com";
         $subject = "New Contact Form Submission";
         $message = "You have received a new contact form submission.\n\nName: $firstName $lastName\nPhone: $phone\nCountry Code: $countryCode";
         $headers = "From: no-reply@example.com";
 
         // Send email
         if (mail($to, $subject, $message, $headers)) {
-            echo "<script>alert('Data saved successfully!'); window.location.href = 'contact.php';</script>";
+            echo "<script>alert('Data saved successfully!'); window.location.href = 'contact.html';</script>";
         } else {
-            echo "<script>alert('Data saved but email could not be sent.'); window.location.href = 'contact.php';</script>";
+            echo "<script>alert('Data saved but email could not be sent.'); window.location.href = 'contact.html';</script>";
         }
     } else {
-        echo "<script>alert('Error saving data: " . $conn->error . "'); window.location.href = 'contact.php';</script>";
+        echo "<script>alert('Error saving data: " . $conn->error . "'); window.location.href = 'contact.html';</script>";
     }
 }
 
